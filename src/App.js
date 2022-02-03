@@ -4,6 +4,7 @@ import Login from './pages/Login';
 import Search from './pages/Search';
 import Album from './pages/Album';
 import Favorites from './pages/Favorites';
+import Profile from './pages/Profile';
 
 class App extends React.Component {
   render() {
@@ -15,6 +16,7 @@ class App extends React.Component {
           <Route exact path="/search" component={ Search } />
           <Route exact path="/album/:id" component={ Album } />
           <Route exact path="/favorites" component={ Favorites } />
+          <Route exact path="/profile" component={ Profile } />
         </BrowserRouter>
       </div>);
   }
