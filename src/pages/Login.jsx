@@ -1,21 +1,15 @@
 import { React, useState } from 'react';
+import { createUser } from '../services/userAPI';
 // import ReactDOM from 'react-dom';
 
 function Login() {
   const [profileName, setName] = useState('');
   const [isButtonDisabled, setStatus] = useState(true);
+  const [loading, setLoading] = useState(false);
+  const [redirect, setRedirect] = useState(false);
 
-  const handleSubmit = (event) => {
+  /* const handleSubmit = (event) => {
     event.preventDefault();
-  };
-
-  /* const handleButtonStatus = () => {
-    const MIN_CHAR = 3;
-    if (profileName.length >= MIN_CHAR) {
-      setStatus(false);
-    } else {
-      setStatus(true);
-    }
   }; */
 
   const handleChange = (e) => {
@@ -26,6 +20,13 @@ function Login() {
     } else {
       setStatus(true);
     }
+  };
+
+  const handleSubmit = async () => {
+    setLoading(true);
+    await createUser(profileName);
+    setLoading(true);
+    setRedirect(false);
   };
 
   return (
@@ -43,6 +44,7 @@ function Login() {
         type="submit"
         data-testid="login-submit-button"
         disabled={ isButtonDisabled }
+        onClick={ handleSubmit }
       />
     </form>
   );
