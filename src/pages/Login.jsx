@@ -2,10 +2,30 @@ import { React, useState } from 'react';
 // import ReactDOM from 'react-dom';
 
 function Login() {
-  const [name, setName] = useState('');
+  const [profileName, setName] = useState('');
+  const [isButtonDisabled, setStatus] = useState(true);
 
   const handleSubmit = (event) => {
     event.preventDefault();
+  };
+
+  /* const handleButtonStatus = () => {
+    const MIN_CHAR = 3;
+    if (profileName.length >= MIN_CHAR) {
+      setStatus(false);
+    } else {
+      setStatus(true);
+    }
+  }; */
+
+  const handleChange = (e) => {
+    const MIN_CHAR = 2;
+    setName(e.target.value);
+    if (profileName.length >= MIN_CHAR) {
+      setStatus(false);
+    } else {
+      setStatus(true);
+    }
   };
 
   return (
@@ -15,11 +35,15 @@ function Login() {
         <input
           type="text"
           data-testid="login-name-input"
-          value={ name }
-          onChange={ (e) => setName(e.target.value) }
+          value={ profileName }
+          onChange={ handleChange }
         />
       </label>
-      <input type="Submit" data-testid="login-submit-button" />
+      <input
+        type="submit"
+        data-testid="login-submit-button"
+        disabled={ isButtonDisabled }
+      />
     </form>
   );
 }
