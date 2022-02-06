@@ -5,7 +5,7 @@ import { getUser } from '../services/userAPI';
 class Header extends Component {
   state = {
     loading: false,
-    userName: '',
+    name: '',
   };
 
   componentDidMount() {
@@ -14,15 +14,15 @@ class Header extends Component {
 
   getInfoUser = async () => {
     this.setState({ loading: true });
-    const { userName } = await getUser();
-    this.setState({ userName, loading: false });
+    const { name } = await getUser();
+    this.setState({ name, loading: false });
   };
 
   render() {
-    const { loading, userName } = this.state;
+    const { loading, name } = this.state;
     return (
       <header data-testid="header-component">
-        {loading ? <Loading /> : <p data-testid="header-user-name">{userName}</p>}
+        {loading ? <Loading /> : <p data-testid="header-user-name">{name}</p>}
       </header>
     );
   }

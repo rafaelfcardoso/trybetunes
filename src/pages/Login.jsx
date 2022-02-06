@@ -3,62 +3,67 @@ import { Redirect } from 'react-router-dom';
 import { createUser } from '../services/userAPI';
 import Loading from './Loading';
 
-// import ReactDOM from 'react-dom';
+/* componentWillUnmount() {
+} */
 
 class Login extends Component {
   state = {
-    profileName: '',
+    name: '',
     isButtonDisabled: true,
     loading: false,
     redirect: false,
   };
 
-  handleSubmit = async () => {
-    const { profileName } = this.state;
-    this.setState({ loading: true });
-    await createUser(profileName);
-    this.setState({ loading: false, redirect: true });
-  };
-
   handleChange = ({ target: { value } }) => {
-    this.setState({ profileName: value }, () => this.handleButtonStatus());
+    this.setState({ name: value }, () => this.handleButtonStatus());
   };
 
   handleButtonStatus = () => {
-    const { profileName } = this.state;
-    const MIN_CHAR = 2;
-    if (profileName.length >= MIN_CHAR) {
+    const { name } = this.state;
+    const MIN_CHAR = 3;
+    if (name.length >= MIN_CHAR) {
       this.setState({ isButtonDisabled: false });
     } else {
       this.setState({ isButtonDisabled: true });
     }
   };
 
+  handleSubmit = () => {
+    const { name } = this.state;
+    this.setState(() => ({
+      loading: true,
+    }), () => createUser({ name }).then(() => {
+      this.setState(() => ({ loading: false, redirect: true }));
+    }));
+  };
+
   render() {
-    const { profileName, isButtonDisabled, loading, redirect } = this.state;
+    const { name, isButtonDisabled, loading, redirect } = this.state;
 
     return (
       <div data-testid="page-login">
         { redirect && (<Redirect to="/search" />) }
-        {loading === true ? (
+        {loading ? (
           <Loading />
         ) : (
-          <form onSubmit={ handleSubmit } data-testid="page-login">
+          <form data-testid="page-login">
             <label htmlFor="login-name-input">
               Enter your name:
               <input
                 type="text"
                 data-testid="login-name-input"
-                value={ profileName }
-                onChange={ handleChange }
+                value={ name }
+                onChange={ this.handleChange }
               />
             </label>
-            <input
-              type="submit"
+            <button
+              type="button"
               data-testid="login-submit-button"
               disabled={ isButtonDisabled }
-              onClick={ handleSubmit }
-            />
+              onClick={ this.handleSubmit }
+            >
+              Entrar
+            </button>
           </form>
         )}
       </div>
@@ -66,5 +71,4 @@ class Login extends Component {
   }
 }
 
-// ReactDOM.render(<Login />, document.getElementById('root'));
 export default Login;
