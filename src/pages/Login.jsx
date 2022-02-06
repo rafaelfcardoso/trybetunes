@@ -1,53 +1,69 @@
-import { React, useState } from 'react';
+import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 import { createUser } from '../services/userAPI';
+import Loading from './Loading';
+
 // import ReactDOM from 'react-dom';
 
-function Login() {
-  const [profileName, setName] = useState('');
-  const [isButtonDisabled, setStatus] = useState(true);
-  const [loading, setLoading] = useState(false);
-  const [redirect, setRedirect] = useState(false);
+class Login extends Component {
+  state = {
+    profileName: '',
+    isButtonDisabled: true,
+    loading: false,
+    redirect: false,
+  };
 
-  /* const handleSubmit = (event) => {
-    event.preventDefault();
-  }; */
+  handleSubmit = async () => {
+    const { profileName } = this.state;
+    this.setState({ loading: true });
+    await createUser(profileName);
+    this.setState({ loading: false, redirect: true });
+  };
 
-  const handleChange = (e) => {
+  handleChange = ({ target: { value } }) => {
+    this.setState({ profileName: value }, () => this.handleButtonStatus());
+  };
+
+  handleButtonStatus = () => {
+    const { profileName } = this.state;
     const MIN_CHAR = 2;
-    setName(e.target.value);
     if (profileName.length >= MIN_CHAR) {
-      setStatus(false);
+      this.setState({ isButtonDisabled: false });
     } else {
-      setStatus(true);
+      this.setState({ isButtonDisabled: true });
     }
   };
 
-  const handleSubmit = async () => {
-    setLoading(true);
-    await createUser(profileName);
-    setLoading(true);
-    setRedirect(false);
-  };
+  render() {
+    const { profileName, isButtonDisabled, loading, redirect } = this.state;
 
-  return (
-    <form onSubmit={ handleSubmit } data-testid="page-login">
-      <label htmlFor="login-name-input">
-        Enter your name:
-        <input
-          type="text"
-          data-testid="login-name-input"
-          value={ profileName }
-          onChange={ handleChange }
-        />
-      </label>
-      <input
-        type="submit"
-        data-testid="login-submit-button"
-        disabled={ isButtonDisabled }
-        onClick={ handleSubmit }
-      />
-    </form>
-  );
+    return (
+      <div data-testid="page-login">
+        { redirect && (<Redirect to="/search" />) }
+        {loading === true ? (
+          <Loading />
+        ) : (
+          <form onSubmit={ handleSubmit } data-testid="page-login">
+            <label htmlFor="login-name-input">
+              Enter your name:
+              <input
+                type="text"
+                data-testid="login-name-input"
+                value={ profileName }
+                onChange={ handleChange }
+              />
+            </label>
+            <input
+              type="submit"
+              data-testid="login-submit-button"
+              disabled={ isButtonDisabled }
+              onClick={ handleSubmit }
+            />
+          </form>
+        )}
+      </div>
+    );
+  }
 }
 
 // ReactDOM.render(<Login />, document.getElementById('root'));
