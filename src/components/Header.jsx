@@ -28,6 +28,9 @@ class Header extends Component {
           <li>
             <Link data-testid="link-to-search" to="/search">Pesquisa</Link>
           </li>
+          <li>
+            <Link data-testid="link-to-favorites" to="/favorites">Favoritos</Link>
+          </li>
         </nav>
       </header>
     );
