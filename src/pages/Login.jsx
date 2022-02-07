@@ -46,7 +46,7 @@ class Login extends Component {
         {loading ? (
           <Loading />
         ) : (
-          <form data-testid="page-login">
+          <form>
             <label htmlFor="login-name-input">
               Enter your name:
               <input
