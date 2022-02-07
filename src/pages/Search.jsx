@@ -1,10 +1,18 @@
 import React from 'react';
 import Header from '../components/Header';
+import searchAlbumsAPI from '../services/searchAlbumsAPI';
 
 class Search extends React.Component {
   state = {
     artistName: '',
     isButtonDisabled: true,
+  };
+
+  searchArtist = () => {
+    const { artistName } = this.state;
+    searchValue = artistName;
+    searchAlbumsAPI(this.artistName);
+    this.setState({ artistName: '' });
   };
 
   handleChange = ({ target: { value } }) => {
@@ -38,6 +46,7 @@ class Search extends React.Component {
             type="button"
             data-testid="search-artist-button"
             disabled={ isButtonDisabled }
+            onClick={ searchArtist }
           >
             Pesquisar
           </button>
