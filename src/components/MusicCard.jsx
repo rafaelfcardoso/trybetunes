@@ -1,10 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class MusicCard extends React.Component {
   render() {
-    const { previewUrl } = this.props;
+    const { url } = this.props;
     return (
-      <audio data-testid="audio-component" src={ previewUrl } controls>
+      <audio data-testid="audio-component" src={ url } controls>
         <track kind="captions" />
         O seu navegador não suporta o elemento
         <code>audio</code>

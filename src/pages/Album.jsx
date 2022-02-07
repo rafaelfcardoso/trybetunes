@@ -1,6 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Header from '../components/Header';
 import getMusics from '../services/musicsAPI';
+import MusicCard from '../components/MusicCard';
 
 class Album extends React.Component {
   state = {
@@ -27,6 +29,7 @@ class Album extends React.Component {
   };
 
   render() {
+    const { artistName, collectionName, artworkUrl100, songs } = this.state;
     return (
       <main>
         <Header />
@@ -36,9 +39,9 @@ class Album extends React.Component {
           <img src={ artworkUrl100 } alt={ collectionName } />
 
           {songs.map(({ songName, songId, previewUrl }) => (
-            <div key={ songId }>
+            <div>
               <span>{songName}</span>
-              <MusicCard url={ previewUrl } />
+              <MusicCard key={ songId } url={ previewUrl } />
             </div>
           ))}
         </div>
