@@ -9,7 +9,7 @@ class Album extends React.Component {
     artistName: '',
     collectionName: '',
     artworkUrl100: '',
-    songs: [],
+    songsList: [],
   };
 
   componentDidMount() {
@@ -19,17 +19,23 @@ class Album extends React.Component {
   requestMusic = async () => {
     const { id } = this.props;
     const responseAPI = await getMusics(id);
+    console.log(responseAPI);
     const { artistName, collectionName, artworkUrl100 } = responseAPI[0];
     this.setState({
       artistName,
       collectionName,
       artworkUrl100,
-      songs: responseAPI.slice(1),
+      songsList: responseAPI.slice(1),
     });
   };
 
+  /**
+   * Consultei o seguinte repositorio para entender a logica da renderizacao da lista de musicas com o .map():
+   * https://github.com/tryber/sd-018-a-project-trybetunes/pull/57/commits/2fbf4d8625a6d85cf9303788898e23c664e92045
+   */
+
   render() {
-    const { artistName, collectionName, artworkUrl100, songs } = this.state;
+    const { artistName, collectionName, artworkUrl100, songsList } = this.state;
     return (
       <main>
         <Header />
@@ -38,10 +44,10 @@ class Album extends React.Component {
           <p data-testid="album-name">{collectionName}</p>
           <img src={ artworkUrl100 } alt={ collectionName } />
 
-          {songs.map(({ songName, songId, previewUrl }) => (
-            <div>
-              <span>{songName}</span>
-              <MusicCard key={ songId } url={ previewUrl } />
+          {songsList.map(({ trackName, trackId, previewUrl }) => (
+            <div key={ trackId }>
+              <span>{trackName}</span>
+              <MusicCard url={ previewUrl } />
             </div>
           ))}
         </div>
