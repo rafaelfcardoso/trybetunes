@@ -19,7 +19,6 @@ class Album extends React.Component {
   requestMusic = async () => {
     const { id } = this.props;
     const responseAPI = await getMusics(id);
-    console.log(responseAPI);
     const { artistName, collectionName, artworkUrl100 } = responseAPI[0];
     this.setState({
       artistName,
