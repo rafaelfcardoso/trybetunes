@@ -3,20 +3,30 @@ import PropTypes from 'prop-types';
 
 class MusicCard extends React.Component {
   render() {
-    const { url } = this.props;
+    const {
+      data: { trackId, trackName, previewUrl },
+      data,
+      handleFavorite,
+      checked,
+    } = this.props;
+
     return (
       <div>
-        <audio data-testid="audio-component" src={ url } controls>
+        <h3>{trackName}</h3>
+        <audio data-testid="audio-component" src={ previewUrl } controls>
           <track kind="captions" />
           O seu navegador não suporta o elemento
+          {' '}
           <code>audio</code>
           .
         </audio>
-
-        <label htmlFor="favorita">
+        <label htmlFor={ trackId }>
           <input
-            type="checkbox"
             data-testid={ `checkbox-music-${trackId}` }
+            type="checkbox"
+            name={ trackId }
+            onChange={ () => handleFavorite(data) }
+            checked={ checked }
           />
         </label>
       </div>
@@ -24,8 +34,13 @@ class MusicCard extends React.Component {
     );
   }
 }
+
+const { string } = PropTypes;
+
 MusicCard.propTypes = {
-  previewUrl: PropTypes.string,
+  trackId: string,
+  trackName: string,
+  previewUrl: string,
 }.isRequired;
 
 export default MusicCard;
