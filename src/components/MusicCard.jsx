@@ -5,12 +5,22 @@ class MusicCard extends React.Component {
   render() {
     const { url } = this.props;
     return (
-      <audio data-testid="audio-component" src={ url } controls>
-        <track kind="captions" />
-        O seu navegador não suporta o elemento
-        <code>audio</code>
-        .
-      </audio>
+      <div>
+        <audio data-testid="audio-component" src={ url } controls>
+          <track kind="captions" />
+          O seu navegador não suporta o elemento
+          <code>audio</code>
+          .
+        </audio>
+
+        <label htmlFor="favorita">
+          <input
+            type="checkbox"
+            data-testid={ `checkbox-music-${trackId}` }
+          />
+        </label>
+      </div>
+
     );
   }
 }
