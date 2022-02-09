@@ -4,7 +4,7 @@ import Header from '../components/Header';
 import getMusics from '../services/musicsAPI';
 import MusicCard from '../components/MusicCard';
 import Loading from './Loading';
-import { addSong/*  getFavoriteSongs */ } from '../services/favoriteSongsAPI';
+import { addSong } from '../services/favoriteSongsAPI';
 
 class Album extends React.Component {
   state = {
@@ -76,55 +76,3 @@ Album.propTypes = {
 };
 
 export default Album;
-
-/* import React from 'react';
-import PropTypes from 'prop-types';
-import Header from '../components/Header';
-import getMusics from '../services/musicsAPI';
-import MusicCard from '../components/MusicCard';
-import Loading from './Loading';
-import { addSong, getFavoriteSongs } from '../services/favoriteSongsAPI';
-
-class Album extends React.Component {
-  state = {
-    albumData: [{
-      artistName: '',
-      collectionName: '',
-      artworkUrl100: '' }],
-  };
-
-  componentDidMount() {
-    const { match: { params: { id } } } = this.props;
-    getMusics(id)
-      .then((data) => this.setState({ albumData: data }));
-  }
-
-  render() {
-    const { albumData } = this.state;
-    const { collectionName, artistName, artworkUrl100 } = albumData[0];
-    console.log(albumData);
-    return (
-      <main>
-        <Header />
-        <div data-testid="page-album">
-          <p data-testid="artist-name">{artistName}</p>
-          <p data-testid="album-name">{collectionName}</p>
-          <img src={ artworkUrl100 } alt={ collectionName } />
-
-          {
-            albumData.map((music, index) => {
-              if (index !== 0) return <MusicCard key={ music.trackId } { ...music } />;
-              return <> </>;
-            })
-          }
-        </div>
-      </main>
-    );
-  }
-}
-
-Album.propTypes = {
-  id: PropTypes.string,
-}.isRequired;
-
-export default Album; */
