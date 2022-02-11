@@ -3,9 +3,6 @@ import { Redirect } from 'react-router-dom';
 import { createUser } from '../services/userAPI';
 import Loading from './Loading';
 
-/* componentWillUnmount() {
-} */
-
 class Login extends Component {
   state = {
     name: '',
