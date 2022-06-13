@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 export const Header = styled.div`
-  background-color: ${(props) => props.theme.colors.primary.background};
+  /* background-color: ${(props) => props.theme.colors.background}; */
+  background-color: transparent;
   position: absolute;
   width: 100%;
   height: 100px;
@@ -11,7 +12,7 @@ export const Header = styled.div`
   justify-content: space-between;
 
   a {
-    color: white;
+    color: ${(props) => props.theme.colors.primary.lighter};
     width: 87px;
     height: 22px;
     margin-right: 30px;
@@ -27,6 +28,7 @@ export const Header = styled.div`
 
 export const Container = styled.div`
   display: flex;
+  width: 600px;
 `;
 
 export const User = styled.p`

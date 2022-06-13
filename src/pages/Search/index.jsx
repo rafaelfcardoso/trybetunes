@@ -1,8 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 import searchAlbumsAPI from '../../services/searchAlbumsAPI';
 import Header from '../../components/Header';
+import * as S from './style';
 
 export default class Search extends React.Component {
   state = {
@@ -59,58 +60,72 @@ export default class Search extends React.Component {
     } = this.state;
 
     return (
-      <div data-testid="page-search">
+      <div>
         <Header />
-        <form>
-          <label htmlFor="search-artist-input">
-            <input
-              id="search-artist-input"
-              type="text"
-              name="artistFormName"
-              value={artistFormName}
-              data-testid="search-artist-input"
-              onChange={this.handleChangeForm}
-            />
-          </label>
-          <button
-            type="submit"
-            data-testid="search-artist-button"
-            disabled={!this.buttonDisabled()}
-            onClick={this.onButtonClick}
-          >
-            Pesquisar
-          </button>
-        </form>
+        <S.Container>
+          <S.SearchFrom>
+            <S.Name htmlFor="search-artist-input">
+              <S.NameInput
+                id="search-artist-input"
+                type="text"
+                placeholder="Nome do Artista"
+                name="artistFormName"
+                value={artistFormName}
+                data-testid="search-artist-input"
+                onChange={this.handleChangeForm}
+              />
+            </S.Name>
+            <S.Button
+              type="submit"
+              data-testid="search-artist-button"
+              disabled={!this.buttonDisabled()}
+              onClick={this.onButtonClick}
+            >
+              <S.TextBtn>Pesquisar</S.TextBtn>
+            </S.Button>
+          </S.SearchFrom>
 
-        { loading
-          ? <p>Carregando...</p>
-          : (
-            <div className="album-list">
-              {artistAlbum.length > 0 && (
-                <>
-                  <h2>
-                    Resultado de álbuns de:
-                    {' '}
-                    {artistName}
-                  </h2>
-                  <div className="">
-                    { artistAlbum.map(({ collectionId, collectionName }) => (
-                      <Link
-                        to={`/album/${collectionId}`}
-                        key={collectionId}
-                        data-testid={`link-to-album-${collectionId}`}
-                      >
-                        {collectionName}
-                      </Link>
-                    ))}
-                  </div>
-                </>
-              )}
-              <div>
-                { hasAlbum ? null : <p>Nenhum álbum foi encontrado</p> }
-              </div>
-            </div>
-          )}
+          { loading
+            ? <p>Carregando...</p>
+            : (
+              <>
+                {artistAlbum.length > 0 && (
+                  <S.Content>
+                    <S.ResultH2>
+                      Resultado de álbuns de:
+                      {' '}
+                      {artistName}
+                    </S.ResultH2>
+                    <S.AlbumContainer>
+                      { artistAlbum.map(({
+                        collectionId,
+                        collectionName,
+                        artworkUrl100,
+                        /* artistName, */
+                      }) => (
+                        <S.Album>
+                          <S.Images
+                            src={artworkUrl100}
+                            alt={collectionName}
+                          />
+                          <S.AlbumTitle
+                            to={`/album/${collectionId}`}
+                            key={collectionId}
+                            data-testid={`link-to-album-${collectionId}`}
+                          >
+                            {collectionName}
+                          </S.AlbumTitle>
+                        </S.Album>
+                      ))}
+                    </S.AlbumContainer>
+                  </S.Content>
+                )}
+                <div>
+                  { hasAlbum ? null : <p>Nenhum álbum foi encontrado</p> }
+                </div>
+              </>
+            )}
+        </S.Container>
       </div>
     );
   }

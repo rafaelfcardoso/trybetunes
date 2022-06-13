@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+// import { lightTheme, darkTheme } from './assets/themes/default';
 
 export default createGlobalStyle`
   * {

@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import Retro from '../../assets/images/retro-pc.jpg';
+import Logo from '../../assets/images/Glyph_Color@2x.png';
 import { createUser } from '../../services/userAPI';
+import * as L from './styles';
 
 export default class Login extends React.Component {
   state = {
@@ -40,30 +42,44 @@ export default class Login extends React.Component {
     return loading ? (
       <p>Carregando...</p>
     ) : (
-      <div data-testid="page-login">
-        <h1>Login</h1>
-        <form>
-          <label htmlFor="login-submit-input">
-            Nome:
-            <input
-              name="formName"
-              id="login-submit-button"
-              type="text"
-              data-testid="login-name-input"
-              value={formName}
-              onChange={this.handleChangeForm}
-            />
-          </label>
-          <button
-            type="submit"
-            data-testid="login-submit-button"
-            onClick={this.onButtonClick}
-            disabled={!this.buttonDisabled()}
-          >
-            Entrar
-          </button>
-        </form>
-      </div>
+      <L.Container>
+        <L.TrybeTunes>
+          <L.Logo
+            src={Logo}
+            alt="Logo"
+          />
+          TRYBE TUNES
+        </L.TrybeTunes>
+        <L.Aside>
+          <form>
+            <L.Name>
+              <L.NameInput
+                name="formName"
+                id="login-submit-button"
+                placeholder="Seu Nome"
+                type="text"
+                data-testid="login-name-input"
+                value={formName}
+                onChange={this.handleChangeForm}
+              />
+            </L.Name>
+            <L.Button
+              type="submit"
+              data-testid="login-submit-button"
+              onClick={this.onButtonClick}
+              disabled={!this.buttonDisabled()}
+            >
+              <L.TextBtn>Entrar</L.TextBtn>
+            </L.Button>
+          </form>
+        </L.Aside>
+        <L.Background>
+          <L.PC
+            src={Retro}
+            alt="Retro PC"
+          />
+        </L.Background>
+      </L.Container>
     );
   }
 }
