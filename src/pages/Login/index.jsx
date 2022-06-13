@@ -42,44 +42,57 @@ export default class Login extends React.Component {
     return loading ? (
       <p>Carregando...</p>
     ) : (
-      <L.Container>
-        <L.TrybeTunes>
-          <L.Logo
-            src={Logo}
-            alt="Logo"
-          />
-          TRYBE TUNES
-        </L.TrybeTunes>
-        <L.Aside>
-          <form>
-            <L.Name>
-              <L.NameInput
-                name="formName"
-                id="login-submit-button"
-                placeholder="Seu Nome"
-                type="text"
-                data-testid="login-name-input"
-                value={formName}
-                onChange={this.handleChangeForm}
+      <L.Background>
+        <L.Container>
+          <L.Aside>
+            <L.LogoContainer>
+              <L.Logo
+                src={Logo}
+                alt="Logo"
               />
-            </L.Name>
-            <L.Button
-              type="submit"
-              data-testid="login-submit-button"
-              onClick={this.onButtonClick}
-              disabled={!this.buttonDisabled()}
-            >
-              <L.TextBtn>Entrar</L.TextBtn>
-            </L.Button>
-          </form>
-        </L.Aside>
-        <L.Background>
-          <L.PC
-            src={Retro}
-            alt="Retro PC"
-          />
-        </L.Background>
-      </L.Container>
+              <L.TrybeTunes>
+                TRYBE TUNES
+              </L.TrybeTunes>
+            </L.LogoContainer>
+            <form>
+              <L.LoginLabel>
+                <L.LoginInput
+                  name="formName"
+                  id="login-submit-button"
+                  placeholder="Seu Nome"
+                  type="text"
+                  data-testid="login-name-input"
+                  value={formName}
+                  onChange={this.handleChangeForm}
+                />
+                <L.LoginInput
+                  name="formName"
+                  id="login-submit-button"
+                  placeholder="Sua Senha"
+                  type="text"
+                  data-testid="login-name-input"
+                  value={formName}
+                  onChange={this.handleChangeForm}
+                />
+                <L.Button
+                  type="submit"
+                  data-testid="login-submit-button"
+                  onClick={this.onButtonClick}
+                  disabled={!this.buttonDisabled()}
+                >
+                  <L.TextBtn>Entrar</L.TextBtn>
+                </L.Button>
+              </L.LoginLabel>
+            </form>
+          </L.Aside>
+          <L.Aside2>
+            <L.PC
+              src={Retro}
+              alt="Retro PC"
+            />
+          </L.Aside2>
+        </L.Container>
+      </L.Background>
     );
   }
 }
