@@ -14,16 +14,14 @@ export const Content = styled.div`
 export const Container = styled.div`
   margin-top: 100px;
   display: flex;
-  /* max-width: 1200px;
-  min-width: 1000px; */
-  width: 1200px;
+  width: 1600px;
   flex-direction: column;
   justify-content: center;
   align-items: stretch;
 `;
 
 export const Album = styled.div`
-  background-color: ${(props) => props.theme.colors.background};
+  background-color: ${(props) => props.theme.colors.primary.background};
   border: none;
   border-radius: 10px;
   display: flex;
@@ -47,7 +45,7 @@ export const InfoContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   flex-basis:60%;
   padding-left: 20px;
   color: ${(props) => props.theme.colors.primary.lighter};
@@ -78,8 +76,14 @@ export const ArtistDiv = styled.div`
   display: flex;
   justify-content: space-between;
   font-size: 24px;
+  margin-top: 15px;
 `;
 
 export const CollectionName = styled.h1`
   font-size: 60px;
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+
 `;
