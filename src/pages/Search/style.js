@@ -132,11 +132,14 @@ export const Album = styled.div`
   justify-content: space-evenly;
 
   text-align: center;
-`;
 
-export const AlbumTitle = styled.a`
-  color: ${(props) => props.theme.colors.primary.lighter};
-  font-weight: bold;
-  margin-left: 50px;
-  max-width: 200px;
+  a {
+    color: ${(props) => props.theme.colors.primary.lighter};
+    max-width: 200px;
+    margin-left: 50px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+  }
+
 `;

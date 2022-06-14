@@ -10,6 +10,8 @@ import {
   removeSong,
 } from '../../services/favoriteSongsAPI';
 
+import * as A from './style';
+
 export default class Album extends React.Component {
   state = {
     musicList: [],
@@ -69,38 +71,48 @@ export default class Album extends React.Component {
       loading, musicList, album, favoriteSongs, loadingFavorites,
     } = this.state;
     return (
-      <div data-testid="page-album">
+      <A.Content>
         <Header />
-
-        { loading || loadingFavorites
-          ? <p>Carregando...</p>
-          : (
-            <>
-              <div className="title-content">
-                {album && (
-                <h3>
-                  <p data-testid="artist-name">
-                    {album.artistName}
-                  </p>
-                  <p data-testid="album-name">
-                    {album.collectionName}
-                  </p>
-                </h3>
-                )}
-              </div>
-              <div className="playlist">
-                {musicList.map((music) => (
-                  <MusicCard
-                    key={music.trackId}
-                    music={music}
-                    AddFavoriteSong={this.AddFavoriteSong}
-                    favorites={favoriteSongs}
-                  />
-                ))}
-              </div>
-            </>
-          )}
-      </div>
+        <A.Container>
+          { loading || loadingFavorites
+            ? <p>Carregando...</p>
+            : (
+              <A.Album>
+                <div className="title-content">
+                  {album && (
+                    <A.CoverContainer>
+                      <A.Artwork
+                        src={album.artworkUrl100}
+                        alt={album.collectionName}
+                      />
+                      <A.InfoContainer>
+                        <p>Album</p>
+                        <A.CollectionName>
+                          {album.collectionName}
+                        </A.CollectionName>
+                        <A.ArtistDiv>
+                          <h3>
+                            {album.artistName}
+                          </h3>
+                        </A.ArtistDiv>
+                      </A.InfoContainer>
+                    </A.CoverContainer>
+                  )}
+                </div>
+                <div className="playlist">
+                  {musicList.map((music) => (
+                    <MusicCard
+                      key={music.trackId}
+                      music={music}
+                      AddFavoriteSong={this.AddFavoriteSong}
+                      favorites={favoriteSongs}
+                    />
+                  ))}
+                </div>
+              </A.Album>
+            )}
+        </A.Container>
+      </A.Content>
     );
   }
 }

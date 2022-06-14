@@ -53,7 +53,7 @@ export const LogoContainer = styled.div`
 `;
 
 export const Logo = styled.img`
-  background-color: ${(props) => props.theme.colors.primary.background};
+  background-color: transparent;
   max-height: 200px;
   max-width: 250px;
   /* margin-left: 0px; */

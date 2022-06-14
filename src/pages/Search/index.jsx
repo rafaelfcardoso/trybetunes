@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import searchAlbumsAPI from '../../services/searchAlbumsAPI';
 import Header from '../../components/Header';
@@ -108,13 +108,13 @@ export default class Search extends React.Component {
                             src={artworkUrl100}
                             alt={collectionName}
                           />
-                          <S.AlbumTitle
+                          <Link
                             to={`/album/${collectionId}`}
                             key={collectionId}
                             data-testid={`link-to-album-${collectionId}`}
                           >
                             {collectionName}
-                          </S.AlbumTitle>
+                          </Link>
                         </S.Album>
                       ))}
                     </S.AlbumContainer>
