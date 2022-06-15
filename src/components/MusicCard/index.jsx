@@ -8,10 +8,13 @@ export default class MusicCard extends React.Component {
     const { music, AddFavoriteSong, favorites } = this.props;
     return (
       <M.Card>
-        <M.TrackName>
+        <M.TrackLabel>
           {music.trackName}
-        </M.TrackName>
-        <audio
+        </M.TrackLabel>
+        <M.TrackLabel>
+          {music.artistName}
+        </M.TrackLabel>
+        <M.Track
           data-testid="audio-component"
           src={music.previewUrl}
           controls
@@ -21,7 +24,7 @@ export default class MusicCard extends React.Component {
           {' '}
           <code>audio</code>
           .
-        </audio>
+        </M.Track>
         <label
           htmlFor={`favorite-${music.trackId}`}
           data-testid={`checkbox-music-${music.trackId}`}
@@ -45,6 +48,7 @@ export default class MusicCard extends React.Component {
 MusicCard.propTypes = {
   music: PropTypes.shape({
     trackName: PropTypes.string.isRequired,
+    artistName: PropTypes.string.isRequired,
     previewUrl: PropTypes.string.isRequired,
     trackId: PropTypes.number.isRequired,
   }).isRequired,
