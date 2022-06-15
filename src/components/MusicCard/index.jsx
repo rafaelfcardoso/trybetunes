@@ -1,14 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import * as M from './style';
+
 export default class MusicCard extends React.Component {
   render() {
     const { music, AddFavoriteSong, favorites } = this.props;
     return (
-      <div>
-        <p>
+      <M.Card>
+        <M.TrackName>
           {music.trackName}
-        </p>
+        </M.TrackName>
         <audio
           data-testid="audio-component"
           src={music.previewUrl}
@@ -35,7 +37,7 @@ export default class MusicCard extends React.Component {
             onChange={AddFavoriteSong}
           />
         </label>
-      </div>
+      </M.Card>
     );
   }
 }

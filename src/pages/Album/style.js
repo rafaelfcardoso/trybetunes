@@ -30,7 +30,7 @@ export const Album = styled.div`
   flex-direction: column;
   justify-content: space-evenly;
   text-align: center;
-  padding-bottom: 50px;
+  padding-bottom: 10px;
 `;
 
 export const CoverContainer = styled.div`
@@ -38,7 +38,6 @@ export const CoverContainer = styled.div`
   border-radius: 10px 10px 0px 0px;
   height:350px;
   padding: 40px;
-  margin-bottom: 40px;
   display: flex;
   justify-content: space-around;
 `;
