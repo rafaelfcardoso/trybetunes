@@ -93,8 +93,9 @@ export default class Search extends React.Component {
                   <S.Content>
                     <S.ResultH2>
                       Resultado de álbuns de:
-                      {' '}
+                      {' "'}
                       {artistName}
+                      {'". '}
                     </S.ResultH2>
                     <S.AlbumContainer>
                       { artistAlbum.map(({

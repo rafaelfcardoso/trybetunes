@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
 export const Header = styled.div`
-  background-color: ${(props) => props.theme.colors.primary.background};
+  background-color: ${(props) => props.theme.colors.main};
   /* background-color: transparent; */
   position: absolute;
-  width: 100%;
+  width: 100vw;
   height: 100px;
   left: 0px;
   top: 0px;

@@ -7,34 +7,37 @@ export const Content = styled.div`
   justify-content: center;
 
 
-  /* align-items: center; */
+  align-items: center;
 
 `;
 
 export const Container = styled.div`
+  background-color: ${(props) => props.theme.colors.primary.background};
   margin-top: 100px;
   display: flex;
-  width: 1600px;
+  width: 100vw;
   flex-direction: column;
   justify-content: center;
-  align-items: stretch;
+  padding: 50px;
+  /* align-items: stretch; */
 `;
 
 export const Album = styled.div`
-  background-color: ${(props) => props.theme.colors.primary.background};
+  background-color: ${(props) => props.theme.colors.primary.main};
   border: none;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   text-align: center;
-  padding: 40px;
-
+  padding-bottom: 50px;
 `;
 
 export const CoverContainer = styled.div`
-/* background-color: ${(props) => props.theme.colors.primary.main}; */
+  background-color: ${(props) => props.theme.colors.secondary.main};
+  border-radius: 10px 10px 0px 0px;
   height:350px;
+  padding: 40px;
   margin-bottom: 40px;
   display: flex;
   justify-content: space-around;
@@ -60,18 +63,6 @@ export const Artwork = styled.img`
 export const Track = styled.div`
 `;
 
-export const Background = styled.div`
-  width: 100vw;
-  height: 100vh;
-  padding: 20px;
-  display: flex;
-  background-color: ${(props) => props.theme.colors.primary.dark};
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: absolute;
-`;
-
 export const ArtistDiv = styled.div`
   display: flex;
   justify-content: space-between;
@@ -87,3 +78,15 @@ export const CollectionName = styled.h1`
   justify-content: flex-start;
 
 `;
+
+/* export const Background = styled.div`
+  width: 100vw;
+  height: 100vh;
+  padding: 20px;
+  display: flex;
+  background-color: ${(props) => props.theme.colors.primary.dark};
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+`; */

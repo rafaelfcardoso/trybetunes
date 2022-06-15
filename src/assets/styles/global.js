@@ -10,9 +10,8 @@ export default createGlobalStyle`
   }
 
   body {
-    background-color: ${(props) => props.theme.colors.primary.dark};
+    background-color: ${(props) => props.theme.colors.primary.background};
     font-size: 16px;
-    padding: 50px;
   }
 
   button {

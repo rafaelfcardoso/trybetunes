@@ -2,7 +2,7 @@ import styled from 'styled-components';
 // import lightTheme from '../../assets/themes/default';
 
 export const Container = styled.div`
-  background-color: ${(props) => props.theme.colors.primary.dark};
+  background-color: ${(props) => props.theme.colors.primary.background};
   height: 100vmax;
   top: 100px;
   width: 100vmax;
@@ -10,30 +10,34 @@ export const Container = styled.div`
 `;
 
 export const SearchFrom = styled.form`
-  background-color: ${(props) => props.theme.colors.primary.dark};
+  /* background-color: ${(props) => props.theme.colors.primary.highlight}; */
+  display: flex;
+  margin-left: 100px;
+  align-items: center;
+  justify-content: space-between;
+  width: 910px;
   height: 150px;
 `;
 
 export const Button = styled.div`
-  background-color: ${(props) => props.theme.colors.primary.main};
-  position: absolute;
+  background-color: ${(props) => props.theme.colors.primary.dark};
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 270px;
   height: 70px;
-  left: 895px;
-  top: 50px;
   border-radius: 10px;
 `;
 
 export const NameInput = styled.input`
   height: 70px;
   width: 590px;
-  left: 0px;
-  top: 0px;
+  /* margin-right: 30px; */
   border-radius: 10px;
-  border: 1px solid ${(props) => props.theme.colors.primary.lighter};
-  background-color: transparent;
+  border: none;
+  background-color: ${(props) => props.theme.colors.secondary.background};
 
-  position: absolute;
+  /* position: absolute; */
 
   ::placeholder {
     color: ${(props) => props.theme.colors.primary.lighter};
@@ -47,30 +51,20 @@ export const NameInput = styled.input`
 
 export const TextBtn = styled.p`
   color: white;
-  text-align: center;
+  display: flex;
+  align-self: center;
   font-style: normal;
   font-weight: 600;
   font-size: 28px;
-  line-height: 34px;
-
-  position: absolute;
-  width: 83px;
-  height: 34px;
-  left: 70px;
-  top: 16px;
 
 `;
 
 export const Name = styled.label`
   stroke: rgba(255, 255, 255, 0.4);
   background-color: transparent;
-  position: absolute;
   width: 590px;
   height: 70px;
-  left: 275px;
-  top: 50px;
   border-radius: 10px;
-  border: 2px solid rgba(63, 61, 86, 0.6);
 
   font-style: normal;
   font-weight: 500;
@@ -78,28 +72,22 @@ export const Name = styled.label`
   line-height: 34px;
 `;
 
+export const Content = styled.div`
+  /* background-color: ${(props) => props.theme.colors.primary.highlight}; */
+  display: flex;
+  align-self: stretch;
+  flex-direction: column;
+  min-height: 540px;
+`;
+
 export const ResultH2 = styled.h2`
-  position: absolute;
-  width: 522px;
-  height: 38px;
-  left: 0px;
-  top: 0px;
+  align-self: stretch;
+  margin-left: 100px;
 
   font-style: normal;
   color: ${(props) => props.theme.colors.primary.lighter};
-  font-weight: 700;
-  font-size: 32px;
+  font-size: 24px;
   line-height: 38px;
-`;
-
-export const Content = styled.div`
-  background-color: ${(props) => props.theme.colors.primary.highlight};
-  position: absolute;
-  top:160px;
-
-  left:200px;
-  min-height: 540px;
-  display: flex;
 `;
 
 export const Images = styled.img`
@@ -111,19 +99,20 @@ export const Images = styled.img`
 
 export const AlbumContainer = styled.div`
   background-color: transparent;
-  position: absolute;
   top:80px;
+  padding: 50px;
 
-  width: 1300px;
-  display: grid;
+  display: flex;
+  align-self: stretch;
+  justify-content: center;
+  flex-wrap: wrap;
   grid-gap: 40px;
-  grid-template-columns: auto auto auto auto;
-  justify-content: space-between;
 `;
 
 export const Album = styled.div`
-  background-color: ${(props) => props.theme.colors.background};
-  border: none;
+  background-color: ${(props) => props.theme.colors.primary.main};
+  border: 0.5px solid ${(props) => props.theme.colors.secondary.background};
+  /* border: none; */
   border-radius: 10px;
   width: 300px;
   height: 350px;
