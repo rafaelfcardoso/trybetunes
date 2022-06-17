@@ -1,14 +1,12 @@
 import styled from 'styled-components';
 
 export const Content = styled.div`
-/*   background-color: ${(props) => props.theme.colors.primary.main}; */
-  display: flex;
-  flex-direction: row;
+  background-color: ${(props) => props.theme.colors.primary.background};
+  margin-top: 100px;
+  padding: 50px;
   justify-content: center;
-
-
-  align-items: center;
-
+  display: flex;
+  flex-direction: column;
 `;
 
 export const Container = styled.div`

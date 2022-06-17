@@ -8,6 +8,8 @@ import {
   removeSong,
 } from '../../services/favoriteSongsAPI';
 
+import * as F from './style';
+
 export default class Favorites extends React.Component {
   state = {
     loading: true,
@@ -42,7 +44,7 @@ export default class Favorites extends React.Component {
   render() {
     const { favoriteSongs, loading } = this.state;
     return (
-      <div data-testid="page-favorites">
+      <F.Content>
         <Header />
 
         {loading
@@ -57,7 +59,7 @@ export default class Favorites extends React.Component {
               />
             ))
           )}
-      </div>
+      </F.Content>
     );
   }
 }
