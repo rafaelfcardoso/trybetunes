@@ -3,9 +3,9 @@ export const lightTheme = {
     main: '#ffffff',
     primary: {
       background: '#7220e3',
-      main: '#cc0fe0',
+      main: '#c74bd3',
       lighter: '#ffe2ed',
-      dark: '#7e1bcc',
+      dark: '#9147cc',
     },
   },
 };
@@ -16,9 +16,9 @@ export const darkTheme = {
     primary: {
       background: '#242438',
       main: '#32334d',
-      highlight: '#cc0fe0',
+      highlight: '#c74bd3',
       lighter: '#bec5e0',
-      dark: '#7e1bcc',
+      dark: '#9147cc',
     },
     secondary: {
       background: '#484b66',

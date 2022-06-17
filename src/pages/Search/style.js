@@ -91,10 +91,10 @@ export const ResultH2 = styled.h2`
 `;
 
 export const Images = styled.img`
-  margin-left: 40px;
+  /* margin-left: 30px; */
   border-radius: 10px;
-  width: 220px;
-  height: 220px;
+  width: 245px;
+  height: 245px;
 `;
 
 export const AlbumContainer = styled.div`
@@ -106,7 +106,7 @@ export const AlbumContainer = styled.div`
   align-self: stretch;
   justify-content: center;
   flex-wrap: wrap;
-  grid-gap: 40px;
+  grid-gap: 20px;
 `;
 
 export const Album = styled.div`
@@ -118,17 +118,18 @@ export const Album = styled.div`
   height: 350px;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  padding: 25px;
+  justify-content: space-around;
 
   text-align: center;
 
   a {
     color: ${(props) => props.theme.colors.primary.lighter};
-    max-width: 200px;
-    margin-left: 50px;
+    max-width: 250px;
+    margin-left: 0px;
     font-style: normal;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 14px;
   }
 
 `;

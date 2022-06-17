@@ -15,7 +15,7 @@ export const Background = styled.div`
   height: 100vh;
   padding: 20px;
   display: flex;
-  background-color: ${(props) => props.theme.colors.primary.dark};
+  background-color: ${(props) => props.theme.colors.primary.background};
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -23,7 +23,7 @@ export const Background = styled.div`
 `;
 
 export const Aside = styled.div`
-  background-color: ${(props) => props.theme.colors.primary.background};
+  background-color: ${(props) => props.theme.colors.primary.main};
   border-radius: 20px 0px 0px 20px;
   min-width: 500px;
   padding: 25px;
@@ -135,7 +135,7 @@ export const LoginLabel = styled.label`
 `;
 
 export const Button = styled.div`
-  background-color: ${(props) => props.theme.colors.primary.main};
+  background-color: ${(props) => props.theme.colors.primary.dark};
   height: 60px;
   width: 350px;
   left: 70px;

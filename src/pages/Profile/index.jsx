@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 
 import { getUser } from '../../services/userAPI';
 import Header from '../../components/Header';
+import Picture from '../../assets/images/profile-logo.svg';
+
+import * as C from './style';
 
 export default class Profile extends React.Component {
   state = {
@@ -24,27 +27,40 @@ export default class Profile extends React.Component {
           loading
             ? <p>Carregando...</p>
             : (
-              <div className="profile">
-                <span>
-                  <img data-testid="profile-image" src={user.image} alt="" />
-                  <Link to="profile/edit">Editar perfil</Link>
-                </span>
-                <p>
-                  Nome:
-                  {' '}
-                  <span>{user.name}</span>
-                </p>
-                <p>
-                  Descrição:
-                  {' '}
-                  <span>{user.description}</span>
-                </p>
-                <p>
-                  Email:
-                  {' '}
-                  <span>{user.email}</span>
-                </p>
-              </div>
+              <C.Content>
+                <C.ProfileCard>
+                  <C.Container>
+                    <C.Picture
+                      src={Picture}
+                      alt="Profile Picture"
+                    />
+                    <span>
+                      <img data-testid="profile-image" src={user.image} alt="" />
+                      <C.EditButtom>
+                        <Link to="profile/edit">EDITAR PERFIL</Link>
+                      </C.EditButtom>
+                    </span>
+                  </C.Container>
+                  <C.Container>
+                    <C.ProfileInfo>
+                      Nome:
+                      {' '}
+                      <span>{user.name}</span>
+                    </C.ProfileInfo>
+                    <C.ProfileInfo>
+                      Descrição:
+                      {' '}
+                      <span>{user.description}</span>
+                    </C.ProfileInfo>
+                    <C.ProfileInfo>
+                      Email:
+                      {' '}
+                      <span>{user.email}</span>
+                    </C.ProfileInfo>
+                  </C.Container>
+                </C.ProfileCard>
+
+              </C.Content>
             )
         }
       </div>
