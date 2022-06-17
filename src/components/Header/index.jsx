@@ -24,8 +24,12 @@ export default class Header extends React.Component {
           <Link to="/profile" data-testid="link-to-profile">Meu Perfil</Link>
         </H.Container>
         {user
-          ? <H.User data-testid="header-user-name">{user.name}</H.User>
-          : <p>Carregando...</p>}
+          ? (
+            <H.UserContainer>
+              <H.Picture src={user.image} alt="Avatar" />
+              <H.User data-testid="header-user-name">{user.name}</H.User>
+            </H.UserContainer>
+          ) : <p>Carregando...</p>}
 
       </H.Header>
     );

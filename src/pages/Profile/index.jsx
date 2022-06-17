@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import { getUser } from '../../services/userAPI';
 import Header from '../../components/Header';
-import Picture from '../../assets/images/profile-logo.svg';
+// import Picture from '../../assets/images/profile-logo.svg';
 
 import * as C from './style';
 
@@ -30,12 +30,8 @@ export default class Profile extends React.Component {
               <C.Content>
                 <C.ProfileCard>
                   <C.Container>
-                    <C.Picture
-                      src={Picture}
-                      alt="Profile Picture"
-                    />
                     <span>
-                      <img data-testid="profile-image" src={user.image} alt="" />
+                      <C.Picture src={user.image} alt="Avatar" />
                       <C.EditButtom>
                         <Link to="profile/edit">EDITAR PERFIL</Link>
                       </C.EditButtom>

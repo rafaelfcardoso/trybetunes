@@ -11,6 +11,7 @@ export const Content = styled.div`
 
 export const ProfileCard = styled.div`
   background-color: ${(props) => props.theme.colors.primary.main};
+  border: 0.5px solid ${(props) => props.theme.colors.secondary.background};
   border-radius: 20px 20px 20px 20px;
   padding: 50px;
   display: flex;
@@ -26,11 +27,12 @@ export const Container = styled.div`
 `;
 
 export const Picture = styled.img`
+  border-radius: 50%;
   height: 200px;
   width: 200px;
-  align-self: center;
-  color: red;
   display: flex;
+  margin: auto;
+  margin-bottom: 50px;
 `;
 
 export const EditButtom = styled.div`

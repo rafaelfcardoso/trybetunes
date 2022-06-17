@@ -38,11 +38,11 @@ export const ContainerLabel = styled.label`
 `;
 
 export const Picture = styled.img`
-  height: 200px;
-  width: 200px;
-  align-self: center;
-  color: red;
+  border-radius: 50%;
+  height: 500px;
+  width: 500px;
   display: flex;
+  align-self: center;
 `;
 
 export const NameField = styled.input`
