@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-// import lightTheme from '../../assets/themes/default';
 
 export const Content = styled.div`
   background-color: ${(props) => props.theme.colors.primary.background};

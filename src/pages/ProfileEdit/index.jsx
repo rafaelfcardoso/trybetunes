@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 
 import { getUser, updateUser } from '../../services/userAPI';
 import Header from '../../components/Header';
+// mport Picture from '../../assets/images/profile-logo.svg';
+import * as C from './style';
 
 export default class ProfileEdit extends React.Component {
   state = {
@@ -62,69 +64,72 @@ export default class ProfileEdit extends React.Component {
     return (
       <div data-testid="page-profile-edit">
         <Header />
-
         {
           loading
             ? <p>Carregando...</p>
             : (
-              <form>
-                <label htmlFor="edit-input-name">
-                  Nome:
-                  <input
-                    id="edit-input-name"
-                    type="text"
-                    name="name"
-                    data-testid="edit-input-name"
-                    value={user.name}
-                    onChange={this.handleChangeForm}
-                  />
-                </label>
+              <C.Content>
+                <C.EditProfileCard>
+                  <C.ContainerForm>
+                    <C.ContainerLabel>
+                      <C.NameField
+                        id="edit-input-name"
+                        type="text"
+                        name="name"
+                        data-testid="edit-input-name"
+                        value={user.name}
+                        onChange={this.handleChangeForm}
+                      />
+                    </C.ContainerLabel>
 
-                <label htmlFor="edit-input-email">
-                  Email:
-                  <input
-                    id="edit-input-email"
-                    type="text"
-                    name="email"
-                    data-testid="edit-input-email"
-                    value={user.email}
-                    onChange={this.handleChangeForm}
-                  />
-                </label>
+                    <C.ContainerLabel>
+                      <C.DescriptionField
+                        id="edit-input-description"
+                        type="text"
+                        name="description"
+                        placeholder="Descrição"
+                        data-testid="edit-input-description"
+                        value={user.description}
+                        onChange={this.handleChangeForm}
+                      />
+                    </C.ContainerLabel>
 
-                <label htmlFor="edit-input-description">
-                  Descrição:
-                  <input
-                    id="edit-input-description"
-                    type="text"
-                    name="description"
-                    data-testid="edit-input-description"
-                    value={user.description}
-                    onChange={this.handleChangeForm}
-                  />
-                </label>
+                    <C.ContainerLabel>
+                      <C.StandardField
+                        id="edit-input-email"
+                        type="text"
+                        name="email"
+                        placeholder="Email"
+                        data-testid="edit-input-email"
+                        value={user.email}
+                        onChange={this.handleChangeForm}
+                      />
+                    </C.ContainerLabel>
 
-                <label htmlFor="edit-input-image">
-                  Imagem:
-                  <input
-                    id="edit-input-image"
-                    type="text"
-                    name="image"
-                    data-testid="edit-input-image"
-                    value={user.image}
-                    onChange={this.handleChangeForm}
-                  />
-                </label>
+                    <C.ContainerLabel>
+                      <C.StandardField
+                        id="edit-input-image"
+                        type="text"
+                        placeholder="Imagem"
+                        name="image"
+                        data-testid="edit-input-image"
+                        value={user.image}
+                        onChange={this.handleChangeForm}
+                      />
+                    </C.ContainerLabel>
 
-                <button
-                  type="submit"
-                  data-testid="edit-button-save"
-                  disabled={!this.isButtonDisabled()}
-                  onClick={this.isSubmitted}
-                >
-                  Salvar
-                </button>
-              </form>
+                    <C.SaveButtom
+                      type="submit"
+                      data-testid="edit-button-save"
+                      disabled={!this.isButtonDisabled()}
+                      onClick={this.isSubmitted}
+                    >
+                      SALVAR
+                    </C.SaveButtom>
+                  </C.ContainerForm>
+                </C.EditProfileCard>
+
+              </C.Content>
             )
         }
       </div>

@@ -20,7 +20,8 @@ export const Header = styled.div`
     align-self: center;
 
     font-style: normal;
-    font-weight: 600;
+    /* font-weight: 600; */
+    text-decoration: none;
     font-size: 18px;
     line-height: 22px;
   }
