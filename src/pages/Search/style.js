@@ -19,7 +19,7 @@ export const SearchFrom = styled.form`
   height: 150px;
 `;
 
-export const Button = styled.div`
+export const Button = styled.button`
   background-color: ${(props) => props.theme.colors.primary.dark};
   display: flex;
   align-items: center;

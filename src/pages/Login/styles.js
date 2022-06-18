@@ -48,6 +48,7 @@ export const Aside2 = styled.div`
 export const LogoContainer = styled.div`
   display: flex;
   justify-content: space-between;
+  padding: 20px;
   flex-direction: column;
   height: 300px;
 `;
@@ -95,12 +96,13 @@ export const LoginInput = styled.input`
   font-size: 20px;
 
   border-color: ${(props) => props.theme.colors.primary.lighter};
-  border-width: 2px;
+  border: 1px solid;
   border-radius: 5px;
   background-color: transparent;
 
+
   :hover {
-    border-color: ${(props) => props.theme.colors.primary.main};
+    border-color: ${(props) => props.theme.colors.primary.dark};
   }
 
   ::placeholder {
@@ -134,12 +136,16 @@ export const LoginLabel = styled.label`
   line-height: 34px;
 `;
 
-export const Button = styled.div`
-  background-color: ${(props) => props.theme.colors.primary.dark};
+export const Button = styled.button`
+  background-color: ${(props) => props.theme.colors.primary.highlight};
   height: 60px;
   width: 350px;
   left: 70px;
   border-radius: 5px;
+
+  :disabled {
+
+  }
 
   display: flex;
   align-self: center;

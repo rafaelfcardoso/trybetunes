@@ -65,15 +65,6 @@ export default class Login extends React.Component {
                   value={formName}
                   onChange={this.handleChangeForm}
                 />
-                <L.LoginInput
-                  name="formName"
-                  id="login-submit-button"
-                  placeholder="Sua Senha"
-                  type="text"
-                  data-testid="login-name-input"
-                  value={formName}
-                  onChange={this.handleChangeForm}
-                />
                 <L.Button
                   type="submit"
                   data-testid="login-submit-button"
