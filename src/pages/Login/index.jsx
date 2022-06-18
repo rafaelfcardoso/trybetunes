@@ -40,7 +40,9 @@ export default class Login extends React.Component {
     const { formName, loading } = this.state;
 
     return loading ? (
-      <p>Carregando...</p>
+      <L.DivLoading>
+        <L.Loader />
+      </L.DivLoading>
     ) : (
       <L.Background>
         <L.Container>

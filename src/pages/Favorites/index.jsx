@@ -44,22 +44,23 @@ export default class Favorites extends React.Component {
   render() {
     const { favoriteSongs, loading } = this.state;
     return (
-      <F.Content>
+      <div>
         <Header />
-
-        {loading
-          ? <p> Carregando...</p>
-          : (
-            favoriteSongs.map((song) => (
-              <MusicCard
-                key={song.trackId}
-                music={song}
-                AddFavoriteSong={this.onFavoriteChange}
-                favorites={favoriteSongs}
-              />
-            ))
-          )}
-      </F.Content>
+        <F.Content>
+          {loading
+            ? <F.Loader />
+            : (
+              favoriteSongs.map((song) => (
+                <MusicCard
+                  key={song.trackId}
+                  music={song}
+                  AddFavoriteSong={this.onFavoriteChange}
+                  favorites={favoriteSongs}
+                />
+              ))
+            )}
+        </F.Content>
+      </div>
     );
   }
 }

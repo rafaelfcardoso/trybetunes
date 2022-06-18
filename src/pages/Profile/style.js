@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Content = styled.div`
   background-color: ${(props) => props.theme.colors.primary.background};
+  height: 100vmax;
   margin-top: 100px;
   padding: 50px;
   justify-content: center;
@@ -13,17 +14,31 @@ export const ProfileCard = styled.div`
   background-color: ${(props) => props.theme.colors.primary.main};
   border: 0.5px solid ${(props) => props.theme.colors.secondary.background};
   border-radius: 20px 20px 20px 20px;
-  padding: 50px;
+  /* padding: 50px; */
+  height: 500px;
+  width: 600px;
   display: flex;
   flex-direction: row;
+  /* align-items: center; */
 `;
 
 export const Container = styled.div`
-  background-color: ${(props) => props.theme.colors.primary.main};
-  width: 350px;
+  margin-top: 100px;
+  /* width: 350px; */
   display: flex;
   flex-direction: column;
+  /* height: 100px; */
+  justify-content: flex-start;
+`;
+
+export const PicContainer = styled.div`
+/*   background-color: ${(props) => props.theme.colors.primary.lighter}; */
+  padding: 50px;
+  /* width: 350px; */
+  display: flex;
+  /* align-items: center; */
   justify-content: space-around;
+  flex-direction: column;
 `;
 
 export const Picture = styled.img`
@@ -31,17 +46,18 @@ export const Picture = styled.img`
   height: 200px;
   width: 200px;
   display: flex;
-  margin: auto;
-  margin-bottom: 50px;
+  /* margin: auto; */
+  /* margin-bottom: 50px; */
 `;
 
-export const EditButtom = styled.div`
+export const EditButtom = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
+  align-self: center;
   width: 150px;
   height: 40px;
-  margin: auto;
+  /* margin: auto; */
 
   border:solid 1px;
   border-color: ${(props) => props.theme.colors.primary.highlight};
@@ -65,5 +81,44 @@ export const EditButtom = styled.div`
 
 export const ProfileInfo = styled.p`
   color: ${(props) => props.theme.colors.primary.lighter};
-  font-weight: bold;
+  margin-bottom: 20px;
+  /* font-weight: bold; */
+`;
+
+export const Loader = styled.div`
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  position: relative;
+  animation: rotate 1s linear infinite;
+
+  ::before,
+
+  ::after {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    inset: 0px;
+    border-radius: 50%;
+    border: 5px solid #FFF;
+    animation: prixClipFix 2s linear infinite ;
+  }
+
+  ::after {
+    inset: 8px;
+    transform: rotate3d(90, 90, 0, 180deg );
+    border-color: ${(props) => props.theme.colors.secondary.background};
+  }
+
+  @keyframes rotate {
+    0%   {transform: rotate(0deg)}
+    100%   {transform: rotate(360deg)}
+  }
+
+  @keyframes prixClipFix {
+    0%   {clip-path:polygon(50% 50%,0 0,0 0,0 0,0 0,0 0)}
+    50%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 0,100% 0,100% 0)}
+    75%, 100%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%)}
+  }
+
 `;

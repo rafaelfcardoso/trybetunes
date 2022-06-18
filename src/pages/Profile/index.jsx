@@ -23,20 +23,20 @@ export default class Profile extends React.Component {
     return (
       <div data-testid="page-profile">
         <Header />
-        {
-          loading
-            ? <p>Carregando...</p>
-            : (
-              <C.Content>
+        <C.Content>
+          {
+            loading
+              ? <C.Loader />
+              : (
                 <C.ProfileCard>
-                  <C.Container>
-                    <span>
-                      <C.Picture src={user.image} alt="Avatar" />
-                      <C.EditButtom>
-                        <Link to="profile/edit">EDITAR PERFIL</Link>
-                      </C.EditButtom>
-                    </span>
-                  </C.Container>
+                  <C.PicContainer>
+
+                    <C.Picture src={user.image} alt="Avatar" />
+                    <C.EditButtom>
+                      <Link to="profile/edit">EDITAR PERFIL</Link>
+                    </C.EditButtom>
+
+                  </C.PicContainer>
                   <C.Container>
                     <C.ProfileInfo>
                       Nome:
@@ -55,10 +55,9 @@ export default class Profile extends React.Component {
                     </C.ProfileInfo>
                   </C.Container>
                 </C.ProfileCard>
-
-              </C.Content>
-            )
-        }
+              )
+          }
+        </C.Content>
       </div>
     );
   }

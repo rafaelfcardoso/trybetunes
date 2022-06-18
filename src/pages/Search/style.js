@@ -5,18 +5,28 @@ export const Container = styled.div`
   background-color: ${(props) => props.theme.colors.primary.background};
   height: 100vmax;
   top: 100px;
-  width: 100vmax;
+  width: 100%;
   position: absolute;
 `;
 
-export const SearchFrom = styled.form`
+export const SearchContainer = styled.div`
+  /* background-color: ${(props) => props.theme.colors.primary.main}; */
+  padding: 15px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  display: flex;
+`;
+
+export const SearchForm = styled.form`
   /* background-color: ${(props) => props.theme.colors.primary.highlight}; */
   display: flex;
-  margin-left: 100px;
-  align-items: center;
-  justify-content: space-between;
-  width: 910px;
-  height: 150px;
+
+  margin-left: 15px;
+  align-items: flex-start;
+  justify-content: center;
+  width: 550px;
+  height: 120px;
 `;
 
 export const Button = styled.button`
@@ -24,14 +34,14 @@ export const Button = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 270px;
-  height: 70px;
+  width: 200px;
+  height: 50px;
   border-radius: 10px;
 `;
 
 export const NameInput = styled.input`
-  height: 70px;
-  width: 590px;
+  height: 50px;
+  width: 400px;
   /* margin-right: 30px; */
   border-radius: 10px;
   border: none;
@@ -41,9 +51,9 @@ export const NameInput = styled.input`
 
   ::placeholder {
     color: ${(props) => props.theme.colors.primary.lighter};
-    font-size: 20px;
-    margin-left: 25px;
-    margin-top: 20px;
+    font-size: 16px;
+    margin-left: 20px;
+    margin-top: 18px;
     position: absolute;
   }
 
@@ -55,7 +65,7 @@ export const TextBtn = styled.p`
   align-self: center;
   font-style: normal;
   font-weight: 600;
-  font-size: 28px;
+  font-size: 20px;
 
 `;
 
@@ -74,15 +84,16 @@ export const Name = styled.label`
 
 export const Content = styled.div`
   /* background-color: ${(props) => props.theme.colors.primary.highlight}; */
-  display: flex;
   align-self: stretch;
+  position: absolute;
+  margin-top: -50px;
   flex-direction: column;
   min-height: 540px;
 `;
 
 export const ResultH2 = styled.h2`
   align-self: stretch;
-  margin-left: 100px;
+  margin-left: 40px;
 
   font-style: normal;
   color: ${(props) => props.theme.colors.primary.lighter};
@@ -132,4 +143,37 @@ export const Album = styled.div`
     font-size: 14px;
   }
 
+`;
+
+export const Loader = styled.div`
+  width: 100%;
+  height: 4.8px;
+  display: inline-block;
+  margin-top: -150px;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.15);
+  overflow: hidden;
+
+  ::after {
+  content: '';
+  width: 192px;
+  height: 4.8px;
+  background: ${(props) => props.theme.colors.secondary.highlight};
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  animation: animloader 2s linear infinite;
+  }
+
+  @keyframes animloader {
+    0% {
+      left: 0;
+      transform: translateX(-100%);
+    }
+    100% {
+      left: 100%;
+      transform: translateX(0%);
+    }
+  }
 `;

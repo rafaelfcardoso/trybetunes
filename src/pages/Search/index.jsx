@@ -63,30 +63,32 @@ export default class Search extends React.Component {
       <div>
         <Header />
         <S.Container>
-          <S.SearchFrom>
-            <S.Name htmlFor="search-artist-input">
-              <S.NameInput
-                id="search-artist-input"
-                type="text"
-                placeholder="Nome do Artista"
-                name="artistFormName"
-                value={artistFormName}
-                data-testid="search-artist-input"
-                onChange={this.handleChangeForm}
-              />
-            </S.Name>
-            <S.Button
-              type="submit"
-              data-testid="search-artist-button"
-              disabled={!this.buttonDisabled()}
-              onClick={this.onButtonClick}
-            >
-              <S.TextBtn>Pesquisar</S.TextBtn>
-            </S.Button>
-          </S.SearchFrom>
+          <S.SearchContainer>
+            <S.SearchForm>
+              <S.Name htmlFor="search-artist-input">
+                <S.NameInput
+                  id="search-artist-input"
+                  type="text"
+                  placeholder="Nome do Artista"
+                  name="artistFormName"
+                  value={artistFormName}
+                  data-testid="search-artist-input"
+                  onChange={this.handleChangeForm}
+                />
+              </S.Name>
+              <S.Button
+                type="submit"
+                data-testid="search-artist-button"
+                disabled={!this.buttonDisabled()}
+                onClick={this.onButtonClick}
+              >
+                <S.TextBtn>Pesquisar</S.TextBtn>
+              </S.Button>
+            </S.SearchForm>
+          </S.SearchContainer>
 
           { loading
-            ? <p>Carregando...</p>
+            ? <S.Loader />
             : (
               <>
                 {artistAlbum.length > 0 && (

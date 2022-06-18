@@ -75,7 +75,7 @@ export default class Album extends React.Component {
         <Header />
         <A.Container>
           { loading || loadingFavorites
-            ? <p>Carregando...</p>
+            ? <A.Loader />
             : (
               <A.Album>
                 <div className="title-content">

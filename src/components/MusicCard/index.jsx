@@ -8,12 +8,14 @@ export default class MusicCard extends React.Component {
     const { music, AddFavoriteSong, favorites } = this.props;
     return (
       <M.Card>
-        <M.TrackLabel>
-          {music.trackName}
-        </M.TrackLabel>
-        <M.TrackLabel>
-          {music.artistName}
-        </M.TrackLabel>
+        <M.TrackContainer>
+          <M.TrackLabel>
+            {music.trackName}
+          </M.TrackLabel>
+          <M.ArtistLabel>
+            {music.artistName}
+          </M.ArtistLabel>
+        </M.TrackContainer>
         <M.Track
           data-testid="audio-component"
           src={music.previewUrl}
@@ -25,21 +27,14 @@ export default class MusicCard extends React.Component {
           <code>audio</code>
           .
         </M.Track>
-        <label
-          htmlFor={`favorite-${music.trackId}`}
-          data-testid={`checkbox-music-${music.trackId}`}
-        >
-          Favorita
-          {' '}
-          <input
-            name="favorite"
-            id={`favorite-${music.trackId}`}
-            value={music.trackId}
-            type="checkbox"
-            checked={favorites.some((s) => s.trackId === music.trackId)}
-            onChange={AddFavoriteSong}
-          />
-        </label>
+        <M.Favorite
+          name="favorite"
+          id={`favorite-${music.trackId}`}
+          value={music.trackId}
+          type="checkbox"
+          checked={favorites.some((s) => s.trackId === music.trackId)}
+          onChange={AddFavoriteSong}
+        />
       </M.Card>
     );
   }

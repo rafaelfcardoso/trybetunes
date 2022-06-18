@@ -29,7 +29,7 @@ export default class Header extends React.Component {
               <H.Picture src={user.image} alt="Avatar" />
               <H.User data-testid="header-user-name">{user.name}</H.User>
             </H.UserContainer>
-          ) : <p>Carregando...</p>}
+          ) : <H.Loader />}
 
       </H.Header>
     );
