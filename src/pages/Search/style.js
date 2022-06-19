@@ -32,7 +32,6 @@ export const Container = styled.div`
   /* background-color: ${(props) => props.theme.colors.primary.lighter}; */
   background-color: red;
   display: flex;
-  margin-left: 200px;
   margin-top: 220px;
 `;
 
@@ -157,6 +156,7 @@ export const Album = styled.div`
 
   a {
     color: ${(props) => props.theme.colors.primary.lighter};
+    text-decoration: none;
     max-width: 250px;
     margin-left: 0px;
     font-style: normal;
@@ -170,7 +170,7 @@ export const Loader = styled.div`
   width: 100%;
   height: 4.8px;
   display: inline-block;
-  margin-top: -150px;
+  margin-top: -75px;
   position: absolute;
   background: rgba(255, 255, 255, 0.15);
   overflow: hidden;

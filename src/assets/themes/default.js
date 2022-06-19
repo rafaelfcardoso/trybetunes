@@ -23,7 +23,7 @@ export const darkTheme = {
     secondary: {
       background: '#484b66',
       main: '#35364f',
-      highlight: '#c74bd3',
+      highlight: '#7220e3',
     },
   },
 };

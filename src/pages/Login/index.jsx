@@ -1,9 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Retro from '../../assets/images/retro-pc.jpg';
-import Logo from '../../assets/images/Glyph_Color@2x.png';
 import { createUser } from '../../services/userAPI';
+
 import * as L from './styles';
+import Retro from '../../assets/images/retro-pc.jpg';
+// import Logo from '../../assets/images/Glyph_Color@2x.png';
+// import Logo from '../../assets/images/Glyph_White.svg';
+import Logo from '../../assets/images/icons8-apple-music-64.svg';
 
 export default class Login extends React.Component {
   state = {

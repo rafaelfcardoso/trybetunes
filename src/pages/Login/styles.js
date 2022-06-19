@@ -147,7 +147,7 @@ export const LoginLabel = styled.label`
 export const Button = styled.button`
   background-color: transparent;
   border: solid 2px;
-  border-color: ${(props) => props.theme.colors.primary.highlight};
+  border-color: ${(props) => props.theme.colors.secondary.highlight};
   height: 60px;
   width: 350px;
   left: 70px;
@@ -184,12 +184,12 @@ export const Button = styled.button`
   }
 
   :enabled {
-    color: ${(props) => props.theme.colors.primary.highlight};
+    color: ${(props) => props.theme.colors.secondary.highlight};
       :hover {
       color: white;
-      background-color: ${(props) => props.theme.colors.primary.highlight};
+      background-color: ${(props) => props.theme.colors.secondary.highlight};
       border: solid 2px;
-      border-color: ${(props) => props.theme.colors.primary.highlight};
+      border-color: ${(props) => props.theme.colors.secondary.highlight};
     }
   }
 

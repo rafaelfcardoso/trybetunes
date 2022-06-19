@@ -9,7 +9,7 @@ export const Header = styled.div`
   width: 200px;
   height: 100vmax;
   left: 0px;
-  top: 0px;
+  top: 100px;
   display: flex;
   align-self: stretch;
   flex-direction: column;
@@ -22,6 +22,30 @@ export const Header = styled.div`
     font-size: 16px;
     line-height: 20px;
   }
+`;
+
+export const BrandContainer = styled.div`
+  background-color: ${(props) => props.theme.colors.primary.main};
+  border: solid 1px;
+  border-color: ${(props) => props.theme.colors.secondary.background};
+  margin-top: 0px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  height: 100px;
+  width: 200px;
+`;
+
+export const Trybetunes = styled.p`
+  color: ${(props) => props.theme.colors.primary.lighter};
+  text-align: right;
+  height: 18px;
+  margin-left: 0px;
+  align-self: center;
+
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
 `;
 
 export const UserContainer = styled.div`
@@ -59,6 +83,14 @@ export const Picture = styled.img`
   border-radius: 50%;
   height: 50px;
   width: 50px;
+  display: flex;
+  align-self: center;
+`;
+
+export const Logo = styled.img`
+  fill: ${(props) => props.theme.colors.primary.highlight};
+  height: 50px;
+  width: 60px;
   display: flex;
   align-self: center;
 `;
