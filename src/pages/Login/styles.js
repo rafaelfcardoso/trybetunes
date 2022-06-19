@@ -226,7 +226,7 @@ export const Loader = styled.div`
     position: absolute;
     inset: 0px;
     border-radius: 50%;
-    border: 5px solid #FFF;
+    border: 5px solid #cd00cf;
     animation: prixClipFix 2s linear infinite ;
   }
 

@@ -61,11 +61,12 @@ export const DescriptionField = styled.input`
   color: ${(props) => props.theme.colors.primary.lighter};
   font-size: 12px;
   height: 120px;
+  padding-left: 15px;
+  display: flex;
 
   ::placeholder {
     color: ${(props) => props.theme.colors.primary.lighter};
     font-size: 12px;
-    margin-left: 15px;
     margin-top: 8px;
     position: absolute;
   }

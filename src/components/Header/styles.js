@@ -64,8 +64,8 @@ export const Picture = styled.img`
 `;
 
 export const Loader = styled.div`
-  margin-top: 25px;
-  margin-right: 25px;
+  margin-right: 30px;
+  margin-bottom: 30px;
   width: 48px;
   height: 48px;
   border-radius: 50%;
@@ -80,7 +80,7 @@ export const Loader = styled.div`
     position: absolute;
     inset: 0px;
     border-radius: 50%;
-    border: 5px solid #FFF;
+    border: 5px solid #9147cc;
     animation: prixClipFix 2s linear infinite ;
   }
 

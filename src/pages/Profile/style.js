@@ -17,7 +17,7 @@ export const ProfileCard = styled.div`
   padding: 50px;
   margin-top: 25px;
   height: 500px;
-  /* width: 900px; */
+  margin-left: 200px;
   display: flex;
   flex-direction: row;
   /* align-items: center; */
@@ -91,6 +91,7 @@ export const ProfileInfo = styled.p`
 `;
 
 export const Loader = styled.div`
+  margin-top: 300px;
   width: 48px;
   height: 48px;
   border-radius: 50%;
@@ -105,7 +106,7 @@ export const Loader = styled.div`
     position: absolute;
     inset: 0px;
     border-radius: 50%;
-    border: 5px solid #FFF;
+    border: 5px solid #9147cc;
     animation: prixClipFix 2s linear infinite ;
   }
 

@@ -11,18 +11,18 @@ export const Title = styled.div`
   top: 0px;
 
   h1 {
-    color: ${(props) => props.theme.colors.primary.dark};
-    width: 87px;
-    height: 40px;
+    font-size: 45px;
+    background: -webkit-linear-gradient(50deg, #c74bd3 10%, #9147cc 50%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     margin-right: 30px;
     margin-left: 60px;
     align-self: flex-end;
+    margin-bottom: 15px;
 
     font-style: normal;
     font-weight: bold;
     text-decoration: none;
-    font-size: 38px;
-    line-height: 22px;
   }
 `;
 

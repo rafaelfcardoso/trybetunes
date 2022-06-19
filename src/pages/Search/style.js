@@ -37,8 +37,9 @@ export const Container = styled.div`
 `;
 
 export const Button = styled.button`
-  background-color: ${(props) => props.theme.colors.primary.dark};
-  border: none;
+  background-color: transparent;
+  border: solid 1px;
+  border-color: ${(props) => props.theme.colors.secondary.background};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -46,24 +47,33 @@ export const Button = styled.button`
   height: 40px;
   margin-top: 1px;
   border-radius: 10px;
+
+  :hover {
+    background-color: ${(props) => props.theme.colors.primary.dark};
+    border-color: ${(props) => props.theme.colors.primary.dark};
+  }
 `;
 
 export const NameInput = styled.input`
+  color: ${(props) => props.theme.colors.primary.lighter};
+  border: none;
   height: 40px;
   width: 400px;
-  /* margin-right: 30px; */
+  padding-left: 20px;
   border-radius: 10px;
   border: none;
   background-color: ${(props) => props.theme.colors.secondary.background};
 
-  /* position: absolute; */
-
   ::placeholder {
     color: ${(props) => props.theme.colors.primary.lighter};
     font-size: 12px;
-    margin-left: 20px;
-    margin-top: 13px;
+    margin-left: 0px;
+    margin-top: 14px;
     position: absolute;
+  }
+
+  :onclick {
+    border: none;
   }
 
 `;
