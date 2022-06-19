@@ -34,6 +34,9 @@ export const BrandContainer = styled.div`
   justify-content: center;
   height: 100px;
   width: 200px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
 `;
 
 export const Trybetunes = styled.p`
@@ -79,7 +82,6 @@ export const Container = styled.div`
 `;
 
 export const Picture = styled.img`
-  fill: ${(props) => props.theme.colors.primary.highlight};
   border-radius: 50%;
   height: 50px;
   width: 50px;

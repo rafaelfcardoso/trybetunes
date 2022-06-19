@@ -113,7 +113,7 @@ export const Content = styled.div`
 
 export const ResultH2 = styled.h2`
   align-self: stretch;
-  margin-left: 60px;
+  margin-left: 260px;
 
   font-style: normal;
   color: ${(props) => props.theme.colors.primary.lighter};
@@ -132,7 +132,7 @@ export const AlbumContainer = styled.div`
   /* background-color: yellow; */
   top:80px;
   padding: 50px;
-
+  margin-left: 200px;
   display: flex;
   align-self: stretch;
   justify-content: center;

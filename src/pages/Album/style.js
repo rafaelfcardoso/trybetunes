@@ -29,6 +29,7 @@ export const Album = styled.div`
   flex-direction: column;
   justify-content: space-evenly;
   text-align: center;
+  align-self: stretch;
   padding-bottom: 10px;
 `;
 
@@ -47,7 +48,7 @@ export const InfoContainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  flex-basis:60%;
+  flex-basis: 80%;
   padding-left: 20px;
   color: ${(props) => props.theme.colors.primary.lighter};
 `;

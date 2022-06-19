@@ -31,7 +31,7 @@ export default class Header extends React.Component {
           {user
             ? (
               <H.UserContainer>
-                {user.image ? <H.Picture src={Logo} alt="Avatar" /> : <H.Picture src={DefaultPicture} alt="Avatar" />}
+                {user.image ? <H.Picture src={user.image} alt="Avatar" /> : <H.Picture src={DefaultPicture} alt="Avatar" />}
                 <H.User data-testid="header-user-name">{user.name}</H.User>
               </H.UserContainer>
             ) : <H.Loader />}

@@ -25,7 +25,7 @@ export const TrackContainer = styled.div`
 export const TrackLabel = styled.p`
   color: white;
   text-align: left;
-  width: 200px;
+  /* width: 550px; */
   height: 20px;
   margin-bottom: 5px;
   align-self: flex-start;
@@ -54,7 +54,7 @@ export const Track = styled.audio`
   height: 30px;
   display: flex;
   flex-grow: 1;
-  max-width: 1000px;
+  max-width: 500px;
   color: ${(props) => props.theme.colors.primary.main};
 `;
 
