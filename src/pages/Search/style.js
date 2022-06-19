@@ -48,8 +48,8 @@ export const Button = styled.button`
   border-radius: 10px;
 
   :hover {
-    background-color: ${(props) => props.theme.colors.primary.dark};
-    border-color: ${(props) => props.theme.colors.primary.dark};
+    background: linear-gradient(50deg, #7220e3 45%, #9147cc 100%);
+    border: none;
   }
 `;
 
@@ -143,7 +143,6 @@ export const AlbumContainer = styled.div`
 export const Album = styled.div`
   background-color: ${(props) => props.theme.colors.primary.main};
   border: 0.5px solid ${(props) => props.theme.colors.secondary.background};
-  /* border: none; */
   border-radius: 10px;
   width: 175px;
   height: 250px;
@@ -151,8 +150,9 @@ export const Album = styled.div`
   flex-direction: column;
   padding: 25px;
   justify-content: space-around;
-
   text-align: center;
+
+  transition: transform .2s;
 
   a {
     color: ${(props) => props.theme.colors.primary.lighter};
@@ -162,6 +162,11 @@ export const Album = styled.div`
     font-style: normal;
     font-weight: bold;
     font-size: 14px;
+  }
+
+  :hover {
+    transform: scale(1.02);
+    box-shadow: 1px 1px 15px  ${(props) => props.theme.colors.primary.main};
   }
 
 `;
