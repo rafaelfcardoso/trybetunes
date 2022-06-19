@@ -12,7 +12,7 @@ export const Title = styled.div`
 
   h1 {
     font-size: 45px;
-    background: -webkit-linear-gradient(50deg, #c74bd3 10%, #9147cc 50%);
+    background: -webkit-linear-gradient(50deg, #7220e3 0%, #9147cc 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-right: 30px;

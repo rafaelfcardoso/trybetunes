@@ -187,9 +187,8 @@ export const Button = styled.button`
     color: ${(props) => props.theme.colors.secondary.highlight};
       :hover {
       color: white;
-      background-color: ${(props) => props.theme.colors.secondary.highlight};
-      border: solid 2px;
-      border-color: ${(props) => props.theme.colors.secondary.highlight};
+      background: linear-gradient(50deg, #7220e3 45%, #9147cc 100%);
+      border: none;
     }
   }
 
