@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+// import FavIcon from '../../assets/images/redHeartIcon.svg';
 import * as M from './style';
 
 export default class MusicCard extends React.Component {

@@ -2,6 +2,7 @@ import React from 'react';
 
 import MusicCard from '../../components/MusicCard';
 import Header from '../../components/Header';
+import Title from '../../components/Title';
 import {
   getFavoriteSongs,
   addSong,
@@ -46,19 +47,23 @@ export default class Favorites extends React.Component {
     return (
       <div>
         <Header />
+        <Title title="Favoritas" />
         <F.Content>
-          {loading
-            ? <F.Loader />
-            : (
-              favoriteSongs.map((song) => (
-                <MusicCard
-                  key={song.trackId}
-                  music={song}
-                  AddFavoriteSong={this.onFavoriteChange}
-                  favorites={favoriteSongs}
-                />
-              ))
-            )}
+          <F.Container>
+            {loading
+              ? <F.Loader />
+              : (
+
+                favoriteSongs.map((song) => (
+                  <MusicCard
+                    key={song.trackId}
+                    music={song}
+                    AddFavoriteSong={this.onFavoriteChange}
+                    favorites={favoriteSongs}
+                  />
+                ))
+              )}
+          </F.Container>
         </F.Content>
       </div>
     );

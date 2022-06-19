@@ -5,15 +5,13 @@ export const Content = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-
-
+  margin-left: 200px;
   align-items: center;
 
 `;
 
 export const Container = styled.div`
   background-color: ${(props) => props.theme.colors.primary.background};
-  margin-top: 100px;
   display: flex;
   width: 100vw;
   flex-direction: column;

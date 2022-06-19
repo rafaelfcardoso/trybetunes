@@ -62,3 +62,7 @@ export const Favorite = styled.input`
   min-width: 40px;
   margin-left: 20px;
 `;
+
+export const Icon = styled.img`
+  height: 30px;
+`;

@@ -2,8 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import { getUser } from '../../services/userAPI';
+import DefaultPicture from '../../assets/images/profile-logo.svg';
+
 import Header from '../../components/Header';
-// import Picture from '../../assets/images/profile-logo.svg';
+import Title from '../../components/Title';
 
 import * as C from './style';
 
@@ -23,6 +25,7 @@ export default class Profile extends React.Component {
     return (
       <div data-testid="page-profile">
         <Header />
+        <Title title="Perfil" />
         <C.Content>
           {
             loading
@@ -30,8 +33,7 @@ export default class Profile extends React.Component {
               : (
                 <C.ProfileCard>
                   <C.PicContainer>
-
-                    <C.Picture src={user.image} alt="Avatar" />
+                    {user.image ? <C.Picture src={user.image} alt="Avatar" /> : <C.Picture src={DefaultPicture} alt="Avatar" />}
                     <C.EditButtom>
                       <Link to="profile/edit">EDITAR PERFIL</Link>
                     </C.EditButtom>

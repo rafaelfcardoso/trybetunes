@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import searchAlbumsAPI from '../../services/searchAlbumsAPI';
 import Header from '../../components/Header';
+import Title from '../../components/Title';
 import * as S from './style';
 
 export default class Search extends React.Component {
@@ -60,33 +61,33 @@ export default class Search extends React.Component {
     } = this.state;
 
     return (
-      <div>
+      <S.Search>
         <Header />
+        <Title title="Explorar" />
+        <S.SearchContainer>
+          <S.SearchForm>
+            <S.Name htmlFor="search-artist-input">
+              <S.NameInput
+                id="search-artist-input"
+                type="text"
+                placeholder="Nome do Artista"
+                name="artistFormName"
+                value={artistFormName}
+                data-testid="search-artist-input"
+                onChange={this.handleChangeForm}
+              />
+            </S.Name>
+            <S.Button
+              type="submit"
+              data-testid="search-artist-button"
+              disabled={!this.buttonDisabled()}
+              onClick={this.onButtonClick}
+            >
+              <S.TextBtn>Pesquisar</S.TextBtn>
+            </S.Button>
+          </S.SearchForm>
+        </S.SearchContainer>
         <S.Container>
-          <S.SearchContainer>
-            <S.SearchForm>
-              <S.Name htmlFor="search-artist-input">
-                <S.NameInput
-                  id="search-artist-input"
-                  type="text"
-                  placeholder="Nome do Artista"
-                  name="artistFormName"
-                  value={artistFormName}
-                  data-testid="search-artist-input"
-                  onChange={this.handleChangeForm}
-                />
-              </S.Name>
-              <S.Button
-                type="submit"
-                data-testid="search-artist-button"
-                disabled={!this.buttonDisabled()}
-                onClick={this.onButtonClick}
-              >
-                <S.TextBtn>Pesquisar</S.TextBtn>
-              </S.Button>
-            </S.SearchForm>
-          </S.SearchContainer>
-
           { loading
             ? <S.Loader />
             : (
@@ -129,7 +130,7 @@ export default class Search extends React.Component {
               </>
             )}
         </S.Container>
-      </div>
+      </S.Search>
     );
   }
 }

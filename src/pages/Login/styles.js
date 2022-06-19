@@ -99,6 +99,7 @@ export const LoginInput = styled.input`
   margin-left: 0px;
   margin-bottom: 20px;
   display: flex;
+  padding: 20px;
 
   color: ${(props) => props.theme.colors.primary.lighter};
   font-size: 20px;
@@ -109,9 +110,10 @@ export const LoginInput = styled.input`
   background-color: transparent;
 
 
-  :hover {
+  /* :hover {
     border-color: ${(props) => props.theme.colors.primary.dark};
-  }
+    background-color: transparent;
+  } */
 
   ::placeholder {
     color: ${(props) => props.theme.colors.primary.lighter};
@@ -120,8 +122,6 @@ export const LoginInput = styled.input`
     justify-self: center;
     align-items: center;
     font-size: 18px;
-    margin-left: 25px;
-    margin-top: 20px;
     position: absolute;
   }
 
@@ -145,21 +145,54 @@ export const LoginLabel = styled.label`
 `;
 
 export const Button = styled.button`
-  background-color: ${(props) => props.theme.colors.primary.highlight};
+  background-color: transparent;
+  border: solid 2px;
+  border-color: ${(props) => props.theme.colors.primary.highlight};
   height: 60px;
   width: 350px;
   left: 70px;
   border-radius: 5px;
-
-  :disabled {
-
-  }
+  color: white;
+  /* border: none; */
 
   display: flex;
   align-self: center;
   justify-self: center;
   justify-content: center;
   align-items: center;
+
+  p {
+    text-align: center;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 34px;
+
+    /* position: absolute; */
+    width: 83px;
+    height: 34px;
+    left: 190px;
+    top: 15px;
+
+  }
+
+  :disabled {
+    background-color: transparent;
+    color: ${(props) => props.theme.colors.primary.lighter};
+    border: solid 2px;
+    border-color: ${(props) => props.theme.colors.primary.lighter};
+  }
+
+  :enabled {
+    color: ${(props) => props.theme.colors.primary.highlight};
+      :hover {
+      color: white;
+      background-color: ${(props) => props.theme.colors.primary.highlight};
+      border: solid 2px;
+      border-color: ${(props) => props.theme.colors.primary.highlight};
+    }
+  }
+
 `;
 
 export const TextBtn = styled.p`

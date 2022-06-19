@@ -2,24 +2,26 @@ import styled from 'styled-components';
 
 export const Content = styled.div`
   background-color: ${(props) => props.theme.colors.primary.background};
+  /* background-color: aliceblue; */
   height: 100vmax;
-  margin-top: 100px;
+  margin-top: 150px;
+  margin-left: 200px;
   padding: 50px;
   justify-content: flex-start;
-  align-items: center;
+  align-items: stretch;
   display: flex;
   flex-direction: column;
 `;
 
 export const Container = styled.div`
-  background-color: ${(props) => props.theme.colors.primary.background};
-  margin-top: 100px;
+  background-color: ${(props) => props.theme.colors.primary.main};
+  border-bottom: 1px;
   display: flex;
-  width: 100vw;
+  border-radius: 10px 10px 10px 10px;
   flex-direction: column;
   justify-content: center;
-  padding: 50px;
-  /* align-items: stretch; */
+  padding: 10px;
+  align-items: stretch;
 `;
 
 export const Album = styled.div`

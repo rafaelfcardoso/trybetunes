@@ -73,7 +73,7 @@ export default class Login extends React.Component {
                   onClick={this.onButtonClick}
                   disabled={!this.buttonDisabled()}
                 >
-                  <L.TextBtn>Entrar</L.TextBtn>
+                  <p>Entrar</p>
                 </L.Button>
               </L.LoginLabel>
             </form>

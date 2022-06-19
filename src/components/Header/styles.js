@@ -5,53 +5,57 @@ export const Header = styled.div`
   border: 0.5px solid ${(props) => props.theme.colors.secondary.background};
   /* background-color: transparent; */
   position: absolute;
-  width: 100vw;
-  height: 100px;
+  padding: 30px;
+  width: 200px;
+  height: 100vmax;
   left: 0px;
   top: 0px;
   display: flex;
-  justify-content: space-between;
+  align-self: stretch;
+  flex-direction: column;
+  justify-content: flex-start;
 
   a {
     color: ${(props) => props.theme.colors.primary.lighter};
-    width: 87px;
-    height: 22px;
-    margin-right: 30px;
-    margin-left: 30px;
-    align-self: center;
-
     font-style: normal;
-    /* font-weight: 600; */
     text-decoration: none;
-    font-size: 18px;
-    line-height: 22px;
+    font-size: 16px;
+    line-height: 20px;
   }
 `;
 
-export const Container = styled.div`
-  display: flex;
-  width: 600px;
-`;
-
 export const UserContainer = styled.div`
+  /* background-color: maroon; */
+  margin-bottom: 30px;
   display: flex;
+  height: 50px;
+  width: 120px;
 `;
 
 export const User = styled.p`
   color: white;
-  width: 87px;
   text-align: right;
   height: 22px;
-  margin-right: 30px;
+  margin-left: 20px;
   align-self: center;
 
   font-style: normal;
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 22px;
+  font-weight: bold;
+  font-size: 16px;
+`;
+
+export const Container = styled.div`
+  /* background-color: black; */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 120px;
+  height: 100px;
 `;
 
 export const Picture = styled.img`
+  fill: ${(props) => props.theme.colors.primary.highlight};
   border-radius: 50%;
   height: 50px;
   width: 50px;

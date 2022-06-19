@@ -1,16 +1,17 @@
 import styled from 'styled-components';
 // import lightTheme from '../../assets/themes/default';
 
-export const Container = styled.div`
-  background-color: ${(props) => props.theme.colors.primary.background};
+export const Search = styled.div`
+  /* background-color: red; */
+  display: flex;
   height: 100vmax;
-  top: 100px;
   width: 100%;
-  position: absolute;
 `;
 
 export const SearchContainer = styled.div`
   /* background-color: ${(props) => props.theme.colors.primary.main}; */
+  position: absolute;
+  margin-left: 200px;
   padding: 15px;
   align-items: center;
   justify-content: flex-start;
@@ -21,26 +22,34 @@ export const SearchContainer = styled.div`
 export const SearchForm = styled.form`
   /* background-color: ${(props) => props.theme.colors.primary.highlight}; */
   display: flex;
-
   margin-left: 15px;
   align-items: flex-start;
   justify-content: center;
   width: 550px;
-  height: 120px;
+`;
+
+export const Container = styled.div`
+  /* background-color: ${(props) => props.theme.colors.primary.lighter}; */
+  background-color: red;
+  display: flex;
+  margin-left: 200px;
+  margin-top: 220px;
 `;
 
 export const Button = styled.button`
   background-color: ${(props) => props.theme.colors.primary.dark};
+  border: none;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 200px;
-  height: 50px;
+  height: 40px;
+  margin-top: 1px;
   border-radius: 10px;
 `;
 
 export const NameInput = styled.input`
-  height: 50px;
+  height: 40px;
   width: 400px;
   /* margin-right: 30px; */
   border-radius: 10px;
@@ -51,9 +60,9 @@ export const NameInput = styled.input`
 
   ::placeholder {
     color: ${(props) => props.theme.colors.primary.lighter};
-    font-size: 16px;
+    font-size: 12px;
     margin-left: 20px;
-    margin-top: 18px;
+    margin-top: 13px;
     position: absolute;
   }
 
@@ -84,6 +93,8 @@ export const Name = styled.label`
 
 export const Content = styled.div`
   /* background-color: ${(props) => props.theme.colors.primary.highlight}; */
+  margin-top: 100px;
+  display: flex;
   align-self: stretch;
   position: absolute;
   margin-top: -50px;
@@ -93,23 +104,23 @@ export const Content = styled.div`
 
 export const ResultH2 = styled.h2`
   align-self: stretch;
-  margin-left: 40px;
+  margin-left: 60px;
 
   font-style: normal;
   color: ${(props) => props.theme.colors.primary.lighter};
-  font-size: 24px;
-  line-height: 38px;
+  font-size: 20px;
+  line-height: 10px;
 `;
 
 export const Images = styled.img`
   /* margin-left: 30px; */
   border-radius: 10px;
-  width: 245px;
-  height: 245px;
+  width: 125px;
+  height: 125px;
 `;
 
 export const AlbumContainer = styled.div`
-  background-color: transparent;
+  /* background-color: yellow; */
   top:80px;
   padding: 50px;
 
@@ -125,8 +136,8 @@ export const Album = styled.div`
   border: 0.5px solid ${(props) => props.theme.colors.secondary.background};
   /* border: none; */
   border-radius: 10px;
-  width: 300px;
-  height: 350px;
+  width: 175px;
+  height: 250px;
   display: flex;
   flex-direction: column;
   padding: 25px;

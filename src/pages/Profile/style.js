@@ -14,17 +14,20 @@ export const ProfileCard = styled.div`
   background-color: ${(props) => props.theme.colors.primary.main};
   border: 0.5px solid ${(props) => props.theme.colors.secondary.background};
   border-radius: 20px 20px 20px 20px;
-  /* padding: 50px; */
+  padding: 50px;
+  margin-top: 25px;
   height: 500px;
-  width: 600px;
+  /* width: 900px; */
   display: flex;
   flex-direction: row;
   /* align-items: center; */
 `;
 
 export const Container = styled.div`
-  margin-top: 100px;
-  /* width: 350px; */
+  background-color:${(props) => props.theme.colors.secondary.background};
+  border-radius: 20px 20px 20px 20px;
+  padding: 20px;
+  width: 350px;
   display: flex;
   flex-direction: column;
   /* height: 100px; */
@@ -60,19 +63,20 @@ export const EditButtom = styled.button`
   /* margin: auto; */
 
   border:solid 1px;
-  border-color: ${(props) => props.theme.colors.primary.highlight};
-  border-width: 2px;
+  border-color: ${(props) => props.theme.colors.primary.lighter};
+  border-width: 1px;
   border-radius: 5px;
   background-color: transparent;
 
   a {
-      color: ${(props) => props.theme.colors.primary.highlight};
+      color: ${(props) => props.theme.colors.primary.lighter};
       font-weight: bold;
       text-decoration: none;
     }
 
   :hover {
     background-color: ${(props) => props.theme.colors.primary.highlight};
+    border-color: ${(props) => props.theme.colors.primary.highlight};
     a {
       color: white;
     }
@@ -81,6 +85,7 @@ export const EditButtom = styled.button`
 
 export const ProfileInfo = styled.p`
   color: ${(props) => props.theme.colors.primary.lighter};
+  font-size: 14px;
   margin-bottom: 20px;
   /* font-weight: bold; */
 `;
