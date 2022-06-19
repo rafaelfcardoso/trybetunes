@@ -75,8 +75,8 @@ export const EditButtom = styled.button`
     }
 
   :hover {
-    background-color: ${(props) => props.theme.colors.primary.highlight};
-    border-color: ${(props) => props.theme.colors.primary.highlight};
+    background: linear-gradient(50deg, #7220e3 45%, #9147cc 100%);
+    border: none;
     a {
       color: white;
     }

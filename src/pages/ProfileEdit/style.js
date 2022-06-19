@@ -97,18 +97,19 @@ export const SaveButtom = styled.button`
   height: 40px;
   margin: auto;
 
-  color: ${(props) => props.theme.colors.primary.highlight};
+  color: ${(props) => props.theme.colors.primary.lighter};
     font-weight: bold;
     text-decoration: none;
 
   border:solid 1px;
-  border-color: ${(props) => props.theme.colors.primary.highlight};
+  border-color: ${(props) => props.theme.colors.primary.lighter};
   border-width: 1px;
   border-radius: 5px;
   background-color: transparent;
 
   :hover {
-    background-color: ${(props) => props.theme.colors.primary.highlight};
+    background: linear-gradient(50deg, #7220e3 45%, #9147cc 100%);
+    border: none;
     color: white;
   }
 `;

@@ -161,6 +161,8 @@ export const Button = styled.button`
   justify-content: center;
   align-items: center;
 
+  transition: transform .2s;
+
   p {
     text-align: center;
     font-style: normal;
@@ -180,15 +182,15 @@ export const Button = styled.button`
     background-color: transparent;
     color: ${(props) => props.theme.colors.primary.lighter};
     border: solid 2px;
-    border-color: ${(props) => props.theme.colors.primary.lighter};
+    border-color: ${(props) => props.theme.colors.secondary.background};
   }
 
   :enabled {
-    color: ${(props) => props.theme.colors.secondary.highlight};
+    color: white;
+    background: linear-gradient(50deg, #7220e3 45%, #9147cc 100%);
+    border: none;
       :hover {
-      color: white;
-      background: linear-gradient(50deg, #7220e3 45%, #9147cc 100%);
-      border: none;
+        transform: scale(1.1);
     }
   }
 
