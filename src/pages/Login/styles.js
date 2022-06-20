@@ -153,7 +153,6 @@ export const Button = styled.button`
   left: 70px;
   border-radius: 5px;
   color: white;
-  /* border: none; */
 
   display: flex;
   align-self: center;
@@ -170,12 +169,10 @@ export const Button = styled.button`
     font-size: 28px;
     line-height: 34px;
 
-    /* position: absolute; */
     width: 83px;
     height: 34px;
     left: 190px;
     top: 15px;
-
   }
 
   :disabled {
@@ -204,7 +201,6 @@ export const TextBtn = styled.p`
   font-size: 28px;
   line-height: 34px;
 
-  /* position: absolute; */
   width: 83px;
   height: 34px;
   left: 190px;
