@@ -4,7 +4,7 @@ export const Header = styled.div`
   background-color: ${(props) => props.theme.colors.main};
   border: 0.5px solid ${(props) => props.theme.colors.secondary.background};
   /* background-color: transparent; */
-  position: absolute;
+  position: fixed;
   padding: 30px;
   width: 200px;
   height: 100vmax;
@@ -34,7 +34,7 @@ export const BrandContainer = styled.div`
   justify-content: center;
   height: 100px;
   width: 200px;
-  position: absolute;
+  position: fixed;
   top: 0px;
   left: 0px;
 `;

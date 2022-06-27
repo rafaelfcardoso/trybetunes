@@ -10,7 +10,7 @@ export const Search = styled.div`
 
 export const SearchContainer = styled.div`
   /* background-color: ${(props) => props.theme.colors.primary.main}; */
-  position: absolute;
+  position: fixed;
   margin-left: 200px;
   padding: 15px;
   align-items: center;
@@ -30,9 +30,21 @@ export const SearchForm = styled.form`
 
 export const Container = styled.div`
   /* background-color: ${(props) => props.theme.colors.primary.lighter}; */
-  background-color: red;
+  /* background-color: red; */
   display: flex;
   margin-top: 220px;
+`;
+
+export const Content = styled.div`
+  /* background-color: ${(props) => props.theme.colors.primary.highlight}; */
+  /* margin-left: 200px; */
+  margin-top: 100px;
+  display: flex;
+  align-self: stretch;
+  /* position: absolute; */
+  margin-top: -50px;
+  flex-direction: column;
+  min-height: 540px;
 `;
 
 export const Button = styled.button`
@@ -98,17 +110,6 @@ export const Name = styled.label`
   font-weight: 500;
   font-size: 28px;
   line-height: 34px;
-`;
-
-export const Content = styled.div`
-  /* background-color: ${(props) => props.theme.colors.primary.highlight}; */
-  margin-top: 100px;
-  display: flex;
-  align-self: stretch;
-  position: absolute;
-  margin-top: -50px;
-  flex-direction: column;
-  min-height: 540px;
 `;
 
 export const ResultH2 = styled.h2`

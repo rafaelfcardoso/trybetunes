@@ -5,9 +5,9 @@ import * as T from './style';
 function Title({ title }) {
   return (
     <T.Title>
-      <h1>
+      <T.H1>
         {title}
-      </h1>
+      </T.H1>
     </T.Title>
   );
 }
