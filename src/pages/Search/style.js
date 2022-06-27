@@ -176,6 +176,7 @@ export const Loader = styled.div`
   height: 4.8px;
   display: inline-block;
   margin-top: -75px;
+  margin-left: 200px;
   position: absolute;
   background: rgba(255, 255, 255, 0.15);
   overflow: hidden;
