@@ -5,6 +5,7 @@ import searchAlbumsAPI from '../../services/searchAlbumsAPI';
 import Header from '../../components/Header';
 import Title from '../../components/Title';
 import * as S from './style';
+import Footer from '../../components/Footer';
 
 export default class Search extends React.Component {
   state = {
@@ -130,6 +131,7 @@ export default class Search extends React.Component {
               </>
             )}
         </S.Container>
+        <Footer />
       </S.Search>
     );
   }
