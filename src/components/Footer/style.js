@@ -9,7 +9,6 @@ export const Footer = styled.div`
   backdrop-filter: blur(3px);
   position: fixed;
   display: flex;
-  /* justify-content: center; */
   width: 100vw;
   height: 70px;
   left: 200px;
@@ -57,5 +56,6 @@ export const Logo = styled.img`
   width: 1400px;
   display: flex;
   justify-self: center;
+  margin-left: 150px;
   align-self: center;
 `;
