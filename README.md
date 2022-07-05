@@ -33,14 +33,14 @@ O Trybetunes é uma aplicação capaz de reproduzir músicas das mais variadas b
 
 
 ## Técnologias usadas
-Esse projeto foi desenvolvido com as seguintes tecnologias:
+Desenvolvido com as seguintes tecnologias:
 
 Front-end:
-> Desenvolvido usando: React, Styled Components, Sass, HTML5, ES6.
+> React, Styled Components, Sass, HTML5, ES6.
 
 ## 📌 Habilidades
 
-Neste projeto, fui capaz de:
+Fui capaz de:
 
   * Fazer requisições e consumir dados vindos de uma `API`;
 
